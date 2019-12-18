@@ -1,0 +1,14 @@
+/2019/09/
+/2019/09/11/hello-world/feed/
+/author/gypsop/
+/category/uncategorized/feed/
+/comments/feed/
+/feed/
+/sample-page/feed/
+/wp-admin/
+/wp-includes/css/dist/block-library/style.min.css
+/wp-includes/css/dist/block-library/theme.min.css
+/wp-includes/js/jquery/jquery-migrate.min.js
+/wp-includes/js/jquery/jquery.js
+/wp-json/
+/wp-json/oembed/1.0/embed

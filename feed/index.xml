@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Gypsop</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
+	<description></description>
+	<lastBuildDate>Tue, 12 Nov 2019 17:07:45 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2</generator>
+
+<image>
+	<url>./../wp-content/uploads/2019/11/cropped-icon-1-32x32.png</url>
+	<title>Gypsop</title>
+	<link>./../index.html</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>1. 启航</title>
+		<link>./../114/index.html</link>
+				<pubDate>Sun, 22 Jul 2018 16:00:01 +0000</pubDate>
+		<dc:creator><![CDATA[Gypsop]]></dc:creator>
+				<category><![CDATA[Python]]></category>
+
+		<guid isPermaLink="false">./../index.html?p=114</guid>
+				<description><![CDATA[&#160;&#160; Python是一种高级编程语言，在许多领域都有广泛的应用，包括网络编程、自动运行脚本 &#8230; <p class="link-more"><a href="./../114/index.html" class="more-link">继续阅读<span class="screen-reader-text">“1. 启航”</span></a></p>]]></description>
+								<content:encoded><![CDATA[
+<p>&nbsp;&nbsp; Python是一种高级编程语言，在许多领域都有广泛的应用，包括网络编程、自动运行脚本、科学计算和人工智能。它非常受欢迎，被谷歌公司、美国宇航局等组织广泛使用。</p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;Python程序在开始运行时，代码将交由解释器处理并由计算机执行命令，所以不需要在运行前提前编译代码（C语言等编程语言编写的程序，通常需要提前进行编译才能运行）。</p>
+
+
+
+<blockquote class="wp-block-quote"><p><strong>解释器</strong></p><p>&nbsp;&nbsp;&nbsp;&nbsp;是一种程序，能够把高级编程语言一行一行地翻译成计算机可以识别的命令进行运行。它不会一次把整个程序转译出来，只是像一位“中间人”，每次运行程序时都要先转成计算机内部命令后再作运行，因此，需要解释器来运行的程序，运行速度比较缓慢。它每转译一行代码，就立刻运行一行，然后再转译下一行，再运行，如此不停地进行下去。</p><p>&nbsp;&nbsp;&nbsp; 但是同时，需要使用解释器来运行的编程语言，不需要预先编译成应用程序，而是可以根据自己计算机的版本等需求来自己选择合适的解释器。这样也避免了预编译的程序在不同计算机上出现不兼容的情况。<br></p></blockquote>
+
+
+
+<p>&nbsp;&nbsp;&nbsp; 本文将介绍如何搭建Python开发环境。</p>
+
+
+
+<h2><strong>Python下载</strong></h2>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;除非特别说明，本系列文章以<strong>Windows7(x64)</strong>为例进行介绍。</p>
+
+
+
+<blockquote class="wp-block-quote"><p>&nbsp;&nbsp;&nbsp;&nbsp;文章中截图、开发步骤等实例所处环境为Windows 7(x64)，在Windows 10系统中大部分步骤相同。</p></blockquote>
+
+
+
+<p><strong>系统版本查看</strong></p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在桌面上右键单击“计算机”（Windows 10系统为“此电脑”），选择“属性”。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_01.png" alt="" class="wp-image-157"/></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在弹出的窗口中可以看到自己计算机中系统版本和类型，如图中蓝色框所示。64位Windows系统可以兼容运行32位版本Python，但是32位Windows系统不可兼容运行64位版本Python。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_02.png" alt="" class="wp-image-158" srcset="./../wp-content/uploads/2019/09/python_pic_01_02.png 755w, ./../wp-content/uploads/2019/09/python_pic_01_02-300x189.png 300w" sizes="(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px" /></figure>
+
+
+
+<h2><strong>Python安装</strong></h2>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;打开Python官方网站https://www.python.org/，在页面上方导航条中找到下载按钮，如图。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_03-1024x534.png" alt="" class="wp-image-159" srcset="./../wp-content/uploads/2019/09/python_pic_01_03-1024x534.png 1024w, ./../wp-content/uploads/2019/09/python_pic_01_03-300x156.png 300w, ./../wp-content/uploads/2019/09/python_pic_01_03-768x400.png 768w, ./../wp-content/uploads/2019/09/python_pic_01_03.png 1080w" sizes="(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp; <strong>Python2.*版本与Python3.*版本的语法等方面有所不同，两个版本之间是不兼容的。</strong>本系列文章以Python3.*语法要求为准。</p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;安装包下载完成后，运行。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_04.png" alt="" class="wp-image-160" srcset="./../wp-content/uploads/2019/09/python_pic_01_04.png 683w, ./../wp-content/uploads/2019/09/python_pic_01_04-300x187.png 300w" sizes="(max-width: 683px) 100vw, 683px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;勾选Add Python to PATH（蓝框），点击Customize installation（红框）。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_05.png" alt="" class="wp-image-161" srcset="./../wp-content/uploads/2019/09/python_pic_01_05.png 688w, ./../wp-content/uploads/2019/09/python_pic_01_05-300x188.png 300w" sizes="(max-width: 688px) 100vw, 688px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;确认红框处为勾选状态，单击Next。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_06.png" alt="" class="wp-image-162" srcset="./../wp-content/uploads/2019/09/python_pic_01_06.png 685w, ./../wp-content/uploads/2019/09/python_pic_01_06-300x187.png 300w" sizes="(max-width: 685px) 100vw, 685px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;建议按上图所示勾选项目，<strong>不要更改安装路径</strong>（记住此路径，后续会用到）。单击Install。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_07.png" alt="" class="wp-image-163" srcset="./../wp-content/uploads/2019/09/python_pic_01_07.png 686w, ./../wp-content/uploads/2019/09/python_pic_01_07-300x187.png 300w" sizes="(max-width: 686px) 100vw, 686px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;安装成功，单击Close结束安装程序。</p>
+
+
+
+<h2><strong>环境变量配置</strong></h2>
+
+
+
+<blockquote class="wp-block-quote"><p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>环境变量简介-看不懂的版本：</strong></p><p>程序和可执行文件通常可以在许多目录中，而这些路径很可能不在操作系统提供可执行文件的运行默认路径中。环境变量提供了更多默认路径供操作系统识别。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>环境变量简介-看得懂的版本：</strong></p><p>在系统默认状态下，我们需要告诉系统，我们想运行的程序究竟是哪个盘的哪个文件夹里面的哪一个文件<strong>（路径）</strong>。在系统中有一个默认的路径列表，一般状态下，如果只把我们想运行的程序的名字告诉了系统，因为这时我们并没有明确给出程序所在位置，那么系统就会拿着这个给出的程序文件名，在默认路径列表<strong>（即PATH环境变量）</strong>中进行寻找，如果找到了默认路径列表中的某个路径里有这个程序，那么就会运行这个默认路径下的对应名称的程序。</p><p><strong>&nbsp;&nbsp;&nbsp;&nbsp;此种方法的坏处在于，</strong>有的时候默认路径下的程序不是我们想运行的版本，在另一个文件夹中有我们想运行的另一个版本的同名程序，但是由于没有给出实际希望运行的版本的所在位置，并且默认路径中存在同名程序，系统只会运行默认路径下的这个版本，而不会去试图搜索其他目录下的更多版本的同名程序。</p><p><strong>&nbsp;&nbsp;&nbsp;&nbsp;此种方法的好处在于，</strong>当程序名比较特殊（比如Python），我们希望运行的版本就是某一个路径下的版本，那么就可以把这个路径加入默认列表<strong>（即PATH环境变量）</strong>中，这样每次运行时只需要给出程序名就可以，而不需要每次都给出完整的所在位置。</p></blockquote>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;从上面的简介中可以看出，如果我们需要在任何文件夹位置使用Python，就必须在环境变量中添加Python的所在目录，使其进入系统默认路径列表中。</p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;打开前面步骤中记录下来的安装路径。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_08.png" alt="" class="wp-image-164" srcset="./../wp-content/uploads/2019/09/python_pic_01_08.png 938w, ./../wp-content/uploads/2019/09/python_pic_01_08-300x154.png 300w, ./../wp-content/uploads/2019/09/python_pic_01_08-768x395.png 768w" sizes="(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;单击上图中蓝框位置，使路径变为可复制状态，复制它。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_09.png" alt="" class="wp-image-165" srcset="./../wp-content/uploads/2019/09/python_pic_01_09.png 938w, ./../wp-content/uploads/2019/09/python_pic_01_09-300x154.png 300w, ./../wp-content/uploads/2019/09/python_pic_01_09-768x395.png 768w" sizes="(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在桌面上右键单击“计算机”（Windows 10系统为“此电脑”），选择“属性”。</p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在左侧选择“高级系统设置”。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_10.png" alt="" class="wp-image-166" srcset="./../wp-content/uploads/2019/09/python_pic_01_10.png 426w, ./../wp-content/uploads/2019/09/python_pic_01_10-270x300.png 270w" sizes="(max-width: 426px) 100vw, 426px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;进入“高级”选项卡，单击最下方的“环境变量”按钮。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_11.png" alt="" class="wp-image-167" srcset="./../wp-content/uploads/2019/09/python_pic_01_11.png 394w, ./../wp-content/uploads/2019/09/python_pic_01_11-271x300.png 271w" sizes="(max-width: 394px) 100vw, 394px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;双击“系统变量”列表中的Path项。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_12.png" alt="" class="wp-image-168" srcset="./../wp-content/uploads/2019/09/python_pic_01_12.png 358w, ./../wp-content/uploads/2019/09/python_pic_01_12-300x129.png 300w" sizes="(max-width: 358px) 100vw, 358px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在“变量值”输入框中输入一个<strong>英文状态下的分号</strong>，然后粘贴刚才的路径。单击确定。</p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在刚才打开的所有窗口中单击确定，环境变量配置完成。</p>
+
+
+
+<p><strong>测试Python配置是否正确</strong><br></p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;按下键盘上的<strong>Windows徽标键+R</strong>，打开“运行”窗口，输入<strong>cmd</strong>。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_13-1024x311.png" alt="" class="wp-image-169" srcset="./../wp-content/uploads/2019/09/python_pic_01_13-1024x311.png 1024w, ./../wp-content/uploads/2019/09/python_pic_01_13-300x91.png 300w, ./../wp-content/uploads/2019/09/python_pic_01_13-768x233.png 768w, ./../wp-content/uploads/2019/09/python_pic_01_13.png 1080w" sizes="(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px" /></figure>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_14.png" alt="" class="wp-image-170" srcset="./../wp-content/uploads/2019/09/python_pic_01_14.png 427w, ./../wp-content/uploads/2019/09/python_pic_01_14-300x165.png 300w" sizes="(max-width: 427px) 100vw, 427px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;打开命令提示符窗口。</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_15.png" alt="" class="wp-image-171" srcset="./../wp-content/uploads/2019/09/python_pic_01_15.png 677w, ./../wp-content/uploads/2019/09/python_pic_01_15-300x140.png 300w" sizes="(max-width: 677px) 100vw, 677px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在窗口中输入：</p>
+
+
+
+<blockquote class="wp-block-quote"><p><code>python --version</code></p></blockquote>
+
+
+
+<p>（注意，version前有<strong>两个</strong><strong>减号(-)。</strong>）<br></p>
+
+
+
+<p><strong>注：本系列文章所有代码均要求在英文输入状态下输入，中文字符和句子除外。</strong></p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;如果出现“Python 3.* *”的字样，则证明Python安装成功并且环境变量配置正确。</p>
+
+
+
+<p><strong>通过编写第一个Python程序来验证安装成功</strong></p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在开始菜单中打开下面的程序：</p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_16.png" alt="" class="wp-image-172" srcset="./../wp-content/uploads/2019/09/python_pic_01_16.png 410w, ./../wp-content/uploads/2019/09/python_pic_01_16-164x300.png 164w" sizes="(max-width: 410px) 100vw, 410px" /></figure>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;弹出的白色窗口是Python自带的代码编写工具IDLE，在本系列文章中以此为默认代码编写工具。</p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在IDLE中输入下列代码：</p>
+
+
+
+<blockquote class="wp-block-quote"><p><code>print("Hello World!")</code></p></blockquote>
+
+
+
+<p><strong>再次说明：本系列文章所有代码均要求在</strong><strong>英文输入状态下</strong><strong>输入，中文字符和句子除外。</strong></p>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;代码输入完成后按回车键确认执行，如果没有问题，输出结果应该是：</p>
+
+
+
+<blockquote class="wp-block-quote"><p><code>Hello World!</code></p></blockquote>
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;也就是下图这个样子。<br></p>
+
+
+
+<figure class="wp-block-image"><img src="./../wp-content/uploads/2019/09/python_pic_01_17.png" alt="" class="wp-image-173" srcset="./../wp-content/uploads/2019/09/python_pic_01_17.png 605w, ./../wp-content/uploads/2019/09/python_pic_01_17-150x150.png 150w, ./../wp-content/uploads/2019/09/python_pic_01_17-300x300.png 300w, ./../wp-content/uploads/2019/09/python_pic_01_17-100x100.png 100w" sizes="(max-width: 605px) 100vw, 605px" /></figure>
+]]></content:encoded>
+										</item>
+	</channel>
+</rss>
