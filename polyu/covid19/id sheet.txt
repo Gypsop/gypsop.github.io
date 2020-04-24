@@ -1,0 +1,11 @@
+1 ['bathhouse', '洗浴'].txt					#FFB6C1 	255,182,193
+2 ['beauty parlour', '美容院'].txt				#FF69B4 	255,105,180
+3 ['entertainment park', '遊樂場所'].txt			#8B008B 	139,0,139
+4 ['fitness', '健身'].txt					#1E90FF 	30,144,255
+5 ['game centre', '遊戲機中心'].txt				#00CED1 	0,206,209
+6 ['karaoke', '卡拉OK'].txt					#2E8B57 	46,139,87
+7 ['mahjong', '麻將'].txt					#808000 	128,128,0
+8 ['massage', '按摩院'].txt					#DAA520 	218,165,32
+9 ['nightclub', '夜總會'].txt					#FFA500 	255,165,0
+10 ['party room', '派對'].txt					#D2691E 	210,105,30
+11 ['public entertainment', '公眾娛樂場所'].txt			#808080 	128,128,128
