@@ -26,38 +26,7 @@ body {
 #legend span:nth-child(3) {
 	color:rgba(255,0,0,1)
 }
-#legend span:nth-child(5) {
-	color:rgba(255,182,193,1)
-}
-#legend span:nth-child(7) {
-	color:rgba(255,105,180,1)
-}
-#legend span:nth-child(9) {
-	color:rgba(139,0,139,1)
-}
-#legend span:nth-child(11) {
-	color:rgba(30,144,255,1)
-}
-#legend span:nth-child(13) {
-	color:rgba(0,206,209,1)
-}
-#legend span:nth-child(15) {
-	color:rgba(46,139,87,1)
-}
-#legend span:nth-child(17) {
-	color:rgba(128,128,0,1)
-}
-#legend span:nth-child(19) {
-	color:rgba(218,165,32,1)
-}
-#legend span:nth-child(21) {
-	color:rgba(255,165,0,1)
-}
-#legend span:nth-child(23) {
-	color:rgba(210,105,30,1)
-}
-#legend span:nth-child(25) {
-	color:rgba(128,128,128,1)
+
 }
 #title {
 	z-index:7;

@@ -29,11 +29,143 @@
 			iconSize: [10, 10],
 			fillColor: "#c92512",
 			color: "#c92512"
+		}),
+		icon_1 = L.icon.pulse({
+			iconSize: [10, 10],
+			fillColor: "#FFB6C1",
+			color: "#FFB6C1"
+		}),
+		icon_2 = L.icon.pulse({
+			iconSize: [10, 10],
+			fillColor: "#FF69B4",
+			color: "#FF69B4"
+		}),
+		icon_3 = L.icon.pulse({
+			iconSize: [10, 10],
+			fillColor: "#8B008B",
+			color: "#8B008B"
+		}),
+		icon_4 = L.icon.pulse({
+			iconSize: [10, 10],
+			fillColor: "#1E90FF",
+			color: "#1E90FF"
+		}),
+		icon_5 = L.icon.pulse({
+			iconSize: [10, 10],
+			fillColor: "#00CED1",
+			color: "#00CED1"
+		}),
+		icon_6 = L.icon.pulse({
+			iconSize: [10, 10],
+			fillColor: "#2E8B57",
+			color: "#2E8B57"
+		}),
+		icon_7 = L.icon.pulse({
+			iconSize: [10, 10],
+			fillColor: "#808000",
+			color: "#808000"
+		}),
+		icon_8 = L.icon.pulse({
+			iconSize: [10, 10],
+			fillColor: "#DAA520",
+			color: "#DAA520"
+		}),
+		icon_9 = L.icon.pulse({
+			iconSize: [10, 10],
+			fillColor: "#FFA500",
+			color: "#FFA500"
+		}),
+		icon_10 = L.icon.pulse({
+			iconSize: [10, 10],
+			fillColor: "#D2691E",
+			color: "#D2691E"
+		}),
+		icon_11 = L.icon.pulse({
+			iconSize: [10, 10],
+			fillColor: "#808080",
+			color: "#808080"
 		});
 	dataObj = JSON.parse(data);
 	for (var n = 0; n < dataObj.length; ++n) {
 		if (pt = dataObj[n], 0 == pt[1])(r = L.marker([pt[3], pt[2]], {
 			icon: icon_0,
+			title: pt[0]
+		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
+	}
+	for (n = 0; n < dataObj.length; ++n) {
+		var r;
+		if (pt = dataObj[n], 1 == pt[1])(r = L.marker([pt[3], pt[2]], {
+			icon: icon_1,
+			title: pt[0]
+		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
+	}
+	for (n = 0; n < dataObj.length; ++n) {
+		var r;
+		if (pt = dataObj[n], 2 == pt[1])(r = L.marker([pt[3], pt[2]], {
+			icon: icon_2,
+			title: pt[0]
+		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
+	}
+	for (n = 0; n < dataObj.length; ++n) {
+		var r;
+		if (pt = dataObj[n], 3 == pt[1])(r = L.marker([pt[3], pt[2]], {
+			icon: icon_3,
+			title: pt[0]
+		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
+	}
+	for (n = 0; n < dataObj.length; ++n) {
+		var r;
+		if (pt = dataObj[n], 4 == pt[1])(r = L.marker([pt[3], pt[2]], {
+			icon: icon_4,
+			title: pt[0]
+		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
+	}
+	for (n = 0; n < dataObj.length; ++n) {
+		var r;
+		if (pt = dataObj[n], 5 == pt[1])(r = L.marker([pt[3], pt[2]], {
+			icon: icon_5,
+			title: pt[0]
+		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
+	}
+	for (n = 0; n < dataObj.length; ++n) {
+		var r;
+		if (pt = dataObj[n], 6 == pt[1])(r = L.marker([pt[3], pt[2]], {
+			icon: icon_6,
+			title: pt[0]
+		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
+	}
+	for (n = 0; n < dataObj.length; ++n) {
+		var r;
+		if (pt = dataObj[n], 7 == pt[1])(r = L.marker([pt[3], pt[2]], {
+			icon: icon_7,
+			title: pt[0]
+		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
+	}
+	for (n = 0; n < dataObj.length; ++n) {
+		var r;
+		if (pt = dataObj[n], 8 == pt[1])(r = L.marker([pt[3], pt[2]], {
+			icon: icon_8,
+			title: pt[0]
+		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
+	}
+	for (n = 0; n < dataObj.length; ++n) {
+		var r;
+		if (pt = dataObj[n], 9 == pt[1])(r = L.marker([pt[3], pt[2]], {
+			icon: icon_9,
+			title: pt[0]
+		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
+	}
+	for (n = 0; n < dataObj.length; ++n) {
+		var r;
+		if (pt = dataObj[n], 10 == pt[1])(r = L.marker([pt[3], pt[2]], {
+			icon: icon_10,
+			title: pt[0]
+		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
+	}
+	for (n = 0; n < dataObj.length; ++n) {
+		var r;
+		if (pt = dataObj[n], 11 == pt[1])(r = L.marker([pt[3], pt[2]], {
+			icon: icon_11,
 			title: pt[0]
 		}).addTo(o)).on("click", t), r.myJsonData = pt[0]
 	}

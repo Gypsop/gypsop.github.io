@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>粵港澳大灣區 COVID-19 暴露風險點分佈</title>
+	
+
+	<link rel="stylesheet" href="./lib/leaflet/leaflet.css" />
+	<link rel="stylesheet" href="./map_detail.css" />
+	<link rel="stylesheet" href="./lib/pulse/L.Icon.Pulse.css" />
+	<script src="./lib/leaflet/leaflet.js"></script>
+	<script src="./lib/pulse/L.Icon.Pulse.js"></script>
+  <link href="./lib/fontawesome/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./lib/Locate/L.Control.Locate.min.css" />
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+  		var hm = document.createElement("script");
+  		hm.src = "https://hm.baidu.com/hm.js?e8090eb3114090c8aea4d81bb2005e42";
+  		var s = document.getElementsByTagName("script")[0]; 
+  		s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	
+</head>
+
+<body>
+
+	<div id='legend' class="leaflet-container">
+		<b>圖例</b><br />
+		<span href=# title="確診個案居所或長期逗留場所">&#11044; 確診個案</span><br />
+		<span href=# title="香港特別行政區政府《限制社交措施規例》限制營業場所">&#11044; 洗浴</span><br />
+		<span href=# title="香港特別行政區政府《限制社交措施規例》限制營業場所">&#11044; 美容院</span><br />
+		<span href=# title="香港特別行政區政府《限制社交措施規例》限制營業場所">&#11044; 遊樂場所</span><br />
+		<span href=# title="香港特別行政區政府《限制社交措施規例》限制營業場所">&#11044; 健身</span><br />
+		<span href=# title="香港特別行政區政府《限制社交措施規例》限制營業場所">&#11044; 遊戲機中心</span><br />
+		<span href=# title="香港特別行政區政府《限制社交措施規例》限制營業場所">&#11044; 卡拉OK</span><br />
+		<span href=# title="香港特別行政區政府《限制社交措施規例》限制營業場所">&#11044; 麻將</span><br />
+		<span href=# title="香港特別行政區政府《限制社交措施規例》限制營業場所">&#11044; 按摩院</span><br />
+		<span href=# title="香港特別行政區政府《限制社交措施規例》限制營業場所">&#11044; 夜總會</span><br />
+		<span href=# title="香港特別行政區政府《限制社交措施規例》限制營業場所">&#11044; 派對</span><br />
+		<span href=# title="香港特別行政區政府《限制社交措施規例》限制營業場所">&#11044; 公眾場所</span><br />
+	</div>
+	
+	<div id="map"></div>
+	<script src="./lib/Locate/L.Control.Locate.min.js" charset="utf-8"></script>
+	<script src="data_detail.js"></script>
+	
+</body>
+
+</html>
