@@ -26,6 +26,9 @@ body {
 #legend span:nth-child(3) {
 	color:rgba(255,0,0,1)
 }
+#legend span:nth-child(5) {
+	color:rgba(127,255,0,1)
+}
 
 }
 #title {
