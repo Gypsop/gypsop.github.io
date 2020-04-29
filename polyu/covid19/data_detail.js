@@ -10,9 +10,9 @@
 		a = (new L.tileLayer("http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png",{
 			minZoom: 8,
 			maxZoom: 18,
-			attribution: '&copy;病例数据：<a href="https://www.coronavirus.gov.hk/chi/index.html">香港特別行政區政府</a>；研發團隊：<a href="http://www.lsgi.polyu.edu.hk/scl/index.html">香港理工大學 智慧城市與空間大數據分析實驗室</a>'
+			attribution: '&copy;病例数据：<a href="https://www.coronavirus.gov.hk/chi/index.html">香港特別行政區政府</a>，<a href="https://www.gov.mo/zh-hant/promotions/314929/">澳門特別行政區政府新型冠狀病毒感染應變協調中心</a>，<a href="http://www.sz.gov.cn/szzt2010/yqfk2020/qktb/">深圳市人民政府</a>，<a href="http://wsjkj.zhuhai.gov.cn/">珠海市衛生健康局</a>；研發團隊：<a href="http://www.lsgi.polyu.edu.hk/scl/index.html">香港理工大學 智慧城市與空間大數據分析實驗室</a>'
 		}),new L.TileLayer("https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiMTkwODIyMjJnIiwiYSI6ImNrNm43aDZlbjB2MXAzbHA2Z3Q0N3p2MTYifQ.P3K163iVFCf8Gk4Ghjgy3Q",{
-			attribution: '病例数据：<a href="https://www.coronavirus.gov.hk/chi/index.html">香港特別行政區政府</a>；研發團隊：<a href="http://www.lsgi.polyu.edu.hk/scl/index.html">香港理工大學 智慧城市與空間大數據分析實驗室</a>',
+			attribution: '&copy;病例数据：<a href="https://www.coronavirus.gov.hk/chi/index.html">香港特別行政區政府</a>，<a href="https://www.gov.mo/zh-hant/promotions/314929/">澳門特別行政區政府新型冠狀病毒感染應變協調中心</a>，<a href="http://www.sz.gov.cn/szzt2010/yqfk2020/qktb/">深圳市人民政府</a>，<a href="http://wsjkj.zhuhai.gov.cn/">珠海市衛生健康局</a>；研發團隊：<a href="http://www.lsgi.polyu.edu.hk/scl/index.html">香港理工大學 智慧城市與空間大數據分析實驗室</a>',
 			tileSize: 512,
 			zoomOffset: -1,
 			minZoom: 8,
