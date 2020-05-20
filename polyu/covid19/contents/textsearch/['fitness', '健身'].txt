@@ -1,0 +1,100 @@
+114.174102|22.297048|SKY FITNESS HK|Hong Kong, Tsim Sha Tsui, 22-28 Mody Road, CFC Tower2/F
+114.168014|22.3188665|力威健身學院 - Franco's GYMcollege|號 安美 大廈 2 樓 CD 室, 599 Shanghai St, Mong Kok, Hong Kong
+114.186808|22.328297|Physical Fitness & Beauty - Kowloon City|Hong Kong, Kowloon Tsai, Junction Rd, 5號號地舖
+114.1687924|22.3034087|King's Fitness|號 地鋪, 12 Kwun Chung St, Jordan, Hong Kong
+114.1850861|22.3705359|沙田頭路藍球場|Sun Tin Wai, Hong Kong
+114.1854808|22.307374|24/7 Fitness Hung Hom|Hong Kong, Hung Hom, G/F & 1/F, Wuhu Residence, 111 Wuhu Street, Hung Hom, Kowloon
+114.194421|22.2898562|Fitness First - Olympia Plaza|4/F - 6/F, Olympia Plaza 255 King's Road, Fortress Hill, 255 King's Rd, North Point, Hong Kong
+114.1702274|22.3167614|Physical Fitness (Mongkok)|Hong Kong, Mong Kok, Nathan Rd, 610號旺角彌敦道610號荷李活商業中心3-6樓 | 3-6/F., Hollywood Plaza
+114.1325412|22.3634417|Quick Charge Fitness 快充健身|Millennium Trade Centre, 202, 2/F, 56 Kwai Cheong Rd, Kwai Chung, Hong Kong
+114.2234929|22.3115079|24/7 Fitness Kwun Tong|Hong Kong, Kwun Tong, Tsun Yip St, 64號南益商業中心8樓
+114.1478138|22.3379086|Jump躍 The Fitness Corner|Hong Kong, Lai Chi Kok, Castle Peak Rd, 489-491號青山 道 489-491 號 10 樓 9B 室 Hong Kong Industrial Centre Block C
+114.1624741|22.3196744|M48 Fitness Club (Hong Kong)|902 室, New Kowloon Plaza, Tai Kok Tsui, Hong Kong
+114.168597|22.318174|Pure Fitness Langham Place Office Tower|7/F Langham Place Office Tower, 8 Argyle St, Mong Kok, Hong Kong
+114.155454|22.28522|Ultimate Performance Personal Trainers Hong Kong|Unicorn Trade Centre, 127-131 Des Voeux Rd Central, Central, Hong Kong
+114.1902365|22.3187782|To Kwa Wan Sports Centre Fitness Room|To Kwa Wan Sports Centre, Ha Heung Rd, To Kwa Wan, Hong Kong
+114.1418987|22.2870492|Anytime Fitness|323 Queen's Rd W, Sai Ying Pun, Hong Kong
+114.1722795|22.2997393|Goji Studios|L9, 100 Nathan Rd, Tsim Sha Tsui, Hong Kong
+114.1249542|22.3699531|Tai Wo Hau Sports Centre|Hong Kong, Kwai Chung, Tai Ha St, 39號大窩口邨
+114.144228|22.288338|utime Fitness Studios|120 Connaught Rd W, Sai Ying Pun, Hong Kong
+114.1131774|22.3753725|Physical Fitness Tsuen Wan|8, 388 Castle Peak Rd (Tsuen Wan), Tsuen Wan, Hong Kong
+114.224486|22.30964|Anytime Fitness Kwun Tong|6/F The Wave, 4 Hing Yip St, Kwun Tong, Hong Kong
+114.1717154|22.2746034|Fitness First - Hopewell Centre|Hopewell Centre, 16/F., Queen's, Queen's Rd E, Wan Chai, Hong Kong
+114.1902583|22.287205|Coastal Fitness Performance Training|Victoria Centre, 15 Watson Rd, North Point, Hong Kong
+114.1999033|22.29132|Fitness First - Kiu Fai Mansion|Kiu Fai Mansion, G/F - 2/F, 413 - 423 King's Rd, North Point, Hong Kong
+114.181121|22.375672|Fu Tak Thai Boxing & Fitness|Hong Kong, Tai Wai, Shing Wan Rd, 25號, Shing Chuen Industrial Building, 7樓4室
+114.1908843|22.287438|健身教練|RY Fitness天后健身中心|2-8 號 208 室, Sea View Estate Block B, 2-8 Watson Road,Tin Hau, Hong Kong
+114.1481262|22.2858466|House of Fitness|18 Possession St, Sheung Wan, Hong Kong
+114.128049|22.36048|Anytime Fitness Kwai Fong|9 Wing Fong Road, Hang King Shopping Arcade,, 2/F Shop 207-208, Kwai Chung, Hong Kong
+114.2119041|22.4197237|中大健身室|Orchid Lodge, Chung Chi Rd, Ma Liu Shui, Hong Kong
+114.1762849|22.3022409|Fitness System 私人健身中心 - 尖沙咀分店|Hong Kong, Tsim Sha Tsui, Austin Ave, 4-4A號2樓全層 Austin Commercial Centre
+114.16631|22.334851|香港賽馬會（偉智街）|Shek Kip Mei, Hong Kong
+114.1709132|22.2974975|鑄博泰拳健身俱樂部 Brilliant Fitness Club|Hong Kong, Tsim Sha Tsui, 漢口道39-41號麥仕維中心11樓全層
+114.1476117|22.3360461|FIT LAB HONG KONG|Unit C, 7/F, D2 Place TWO, 15 Cheung Shun St, Lai Chi Kok, Hong Kong
+114.1874048|22.3826258|Physical Fitness Sha Tin|3/F., Citylink Plaza, Sha Tin, Hong Kong
+114.1706447|22.3177856|MTS Fitness|55號 Shantung Street, Mong Kok, Hong Kong
+114.1193143|22.3681637|Tan Fitness - Tseun wan|Hong Kong, Tsuen Wan, Sha Tsui Rd, 364-366號, Bonsun Industrial Building, Room 1705
+114.19181|22.28513|I Love Fitness|Hong Kong, Causeway Bay, Wing Hing St, 4號天后 號 1A Tobacco House
+114.1719148|22.2974579|Alive Fitness HK|號 F, Harilela Mansion, 81 Nathan Rd, No. 12 Hill, Hong Kong
+114.1722963|22.3249073|M48 Wellness Lab|190 Prince Edward Rd W, Mong Kok, Hong Kong
+114.1865164|22.2791378|舒適寶 銅鑼灣|Hong Kong, Causeway Bay, Yee Wo St, 68號8-10 樓 68 Yee Wo Street
+114.158302|22.283881|Fitness First - Exchange Square|37/F, One Exchange Square, Central, Hong Kong
+114.1886772|22.3091411|Elite Fitness 精英雲集健身中心|號, 37 Man Yue St, Hung Hom, Hong Kong
+114.1762685|22.3022214|Fitness System|Austin Commercial Centre, 號, 4 Austin Ave, Tsim Sha Tsui, Hong Kong
+114.1699922|22.3155385|Wow Fitness|583 Nathan Rd, Mong Kok, Hong Kong
+114.1689952|22.3185073|4Ward Fitness|旺角奶路臣街11號MPM文華商場2樓, Mong Kok, Hong Kong
+114.1881411|22.3222358|Anytime Fitness To Kwa Wan|地下及一樓, Tam Kung Mansion, 53號 Tam Kung Rd, Ma Tau Chung, Hong Kong
+114.1959315|22.3338165|LET'S FITNESS|RM 102, YUE XIU PLAZA, NO, 9 Ning Yuen St, San Po Kong, Hong Kong
+114.1677391|22.3195013|PERSONAL TRAINER 私人健身教練 KATIE|Island Centre, 470 Reclamation St, Mong Kok, Hong Kong
+114.2084928|22.3226388|Fitness Playground HK|Hong Kong, Kowloon Bay, G4A, 6 wang kwun road
+114.1532357|22.3400928|Vegan Fitness 長沙灣店|Hong Kong, Cheung Sha Wan, 青山道454號 3
+114.2081443|22.3198071|Goji Studios|Level 18 of MegaBox, Enterprise Square Five,, 38 Wang Chiu Road, Kowloon Bay, Kowloon, Hong Kong, Kowloon Bay, Hong Kong
+114.1736376|22.3031813|GymBeginner Studio|Hong Kong, Jordan, Austin Rd, 130號, Capri Building, 4樓A室
+114.224629|22.31263|Fitness First - One Pacific Centre|25-26F, One Pacific Centre, 414 Kwun Tong Rd, Kwun Tong, Hong Kong
+114.262265|22.313389|Hong Kong Velodrome Gym Room|Hang Hau, Hong Kong
+114.132277|22.362438|Anytime Fitness Kwai Hing|7th floor shop 701, 72-76 Kwai Cheong Road, life@KCC, 706 Kwai Chung, Hong Kong
+114.16864|22.297349|Fitness First|Hong Kong, Tsim Sha Tsui, 香港九龍尖沙咀廣東道 11號海港城世界商業中心5樓
+114.1839249|22.2813968|Fitness First - Causeway Bay - Tower 535|8/F, TOWER, 535 535, 7 Jaffe Rd, Causeway Bay, Hong Kong
+114.1831586|22.280929|Fitness System 私人健身中心 - 銅鑼灣分店|Way On Commercial Building, 500 Jaffe Rd, Kellet Island, Hong Kong
+114.2066352|22.3816909|Enjoyce Yoga & Fitness Studio|Citimark, Yuen Shun Circuit, Sha Tin, Hong Kong
+114.1898522|22.3828915|BC Fitness & Wellness|2-16 Wang Pok St, Sha Tin, Hong Kong
+114.161134|22.329245|LEISURE and Cultural Services|Hong Kong, Sham Shui Po, 基隆街333號北河街市政大廈5字樓
+114.1495807|22.3395314|Elite Corner Fitness|13D, The Globe, 79 Wing Hong St, Lai Chi Kok, Hong Kong
+114.1734285|22.2992998|Physical Fitness|Hong Kong, Tsim Sha Tsui, Carnarvon Rd, 20-20C號3-4 樓 Carnarvon Plaza
+114.169177|22.321353|世運健力學院|Hong Kong, Mong Kok, Nathan Rd, Kwong On Bank Mongkok Branch Building, 3C
+114.2024249|22.3947426|體能訓練中心|25 Yuen Wo Rd, Sha Tin, Hong Kong
+114.153325|22.340238|So Fitness|1 楼, 454號 Castle Peak Rd, Cheung Sha Wan, Hong Kong
+114.172013|22.324808|Simple Life Fitness and Counselling|186 Prince Edward Rd W, Mong Kok, Hong Kong
+114.1659974|22.3255528|JC FITNESS|63-87 Ki Lung Street, Ki Lung St, Prince Edward, Hong Kong
+114.1590765|22.2851935|Pure Fitness ifc mall|3/f ifc mall, 8 Finance Street, Central, Hong Kong
+114.1948482|22.2900582|Fitness First|Hong Kong, North Point, Kiu Fai Mansion, King’s Road413-423號G/F - 2/F
+114.1876893|22.3008065|AIR Fitness (Whampoa)|Hong Kong, Hung Hom, 紅鸞道18號One Harbour Gate東翼祥祺中心一樓全層
+114.1712471|22.3631625|LEISURE and Cultural Services Department fitness room_shatin|Hong Kong, 沙田顯徑邨顯徑商場
+114.1646041|22.3247261|LRCF Fitness HK|197號 197 Tong Mi Rd, Prince Edward, Hong Kong
+114.188621|22.309351|Hanuman Thai Boxing & Fitness Centre 孫悟空泰拳及健身中心|Hong Kong, 香港九龍紅磡 民裕街37-45號 凱旋工商中心1期13樓A1室
+114.1487519|22.3361045|FAC Fighting Arts Center -D2|Hong Kong, Lai Chi Kok, Cheung Yee St, 9號D2 Place ONE 6 樓 B 室
+114.168596|22.297192|Fitness First - Harbour City (WCC)|5/F, World Commerce Centre, Harbour City, 11 Canton Road, Tsim Sha Tsui, Hong Kong
+114.207649|22.3891759|StayFit Fitness|On Lai St, Sha Tin, Hong Kong
+114.1148816|22.3692027|GO24 Fitness Tsuen Wan|6/F Optimall, 118, Chuen Lung St, Tsuen Wan, Hong Kong
+114.1811141|22.3118107|Ho Man Tin Sports Centre|Ho Man Tin Sports Centre, Chung Yee Street, No. 12 Hill, Hong Kong
+114.1733436|22.2789143|Physical Fitness|88 Gloucester Rd, Wan Chai, Hong Kong
+114.2008172|22.3364334|NIN Studio|Hong Kong, San Po Kong, Luk Hop St, 29號G/F
+114.1873333|22.3372663|Physical|Junction Rd, Wang Tau Hom, Hong Kong
+114.1535456|22.2853085|Physical Fitness Central|12th Floor, Cosco Tower, 181號 Queen's Road Central, Central, Hong Kong
+114.171176|22.3116349|Zolar Fitness|Hong Kong, Yau Ma Tei, Nathan Rd, 492號, Bangkok Bank Building, 21樓
+114.163558|22.3229789|Benjamin Fitness Club|67 Bedford Rd, Tai Kok Tsui, Hong Kong
+114.172523|22.277939|RIZAP|Hong Kong, Wan Chai, Lockhart Rd, 114-118號, Gaylord Commercial Building, 1/F
+114.168112|22.3076534|Jackie's Fitness|Jade Court, 81-87 Wai Ching St, Yau Ma Tei, Hong Kong
+114.1532016|22.2820704|Pure Fitness Kinwick Centre|3/F, Kinwick Centre, 32 Hollywood Rd, Central, Hong Kong
+114.1591226|22.336145|Anytime Fitness|Hong Kong, Sham Shui Po, Castle Peak Rd, 201號2/F
+114.2259911|22.3108108|Physical Fitness|19/F, Legend Tower, No. 7 Shing Yip St, Kwun Tong, Hong Kong
+114.1815219|22.2790237|Eliment Fitlax|Hong Kong, Causeway Bay, 登龍街18號1/F V-Point
+114.1888302|22.3283929|Anytime Fitness Kowloon City|The Avery, 16 號 一 樓 3 號 舖, 12-18 Hau Wong Rd, Kowloon City, Hong Kong
+114.1529255|22.284978|TOPFIT Fitness Gym 💪|3/F, The Wellington, 198 Wellington St, Central, Hong Kong
+114.1495098|22.3379886|Goal Fitness|號 3/F, 796 Cheung Sha Wan Rd, Lai Chi Kok, Hong Kong
+114.1726436|22.2952283|Fitness First - Sheraton|18/F, Sheraton Hotel & Towers, 20 Nathan Rd, Tsim Sha Tsui, Hong Kong
+114.1707348|22.2975132|Core Fitness HK|Hong Kong, Tsim Sha Tsui, Hankow Rd, 39-41號, Maxwell Centre, 3樓
+114.195904|22.335132|Fit and Pose Fitness Studio|1/f, 33 Shung Ling St, San Po Kong, Hong Kong
+114.1717538|22.318378|24/7 Fitness Mongkok|Hong Kong, Mong Kok, Sai Yee St, 39-55號, Golden Era Plaza, 7樓
+114.22544|22.329687|Fitness Room, Shun Lee Tsuen Sports Centre|Shun Lee Tsuen Road, Kwun Tong, Hong Kong
+114.142098|22.335116|Physical Fitness|122B Broadway Street, P/F, Stage 8, Mei Foo Sun Chuen, Hong Kong

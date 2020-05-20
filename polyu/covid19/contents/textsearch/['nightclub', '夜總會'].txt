@@ -1,0 +1,90 @@
+114.168597|22.318174|David Lewis|Hong Kong, Mong Kok, Argyle St, 8號2512 Langham Place Office Tower 8
+114.165109|22.324436|康城卡拉OK夜總會|208～228 Tong Mi Rd, Mong Kok, Hong Kong
+114.17218|22.304762|天上人間夜總會|Jordan, Hong Kong
+114.183175|22.280946|WE CLUB|Hong Kong, Causeway Bay, Jaffe Rd, 496號6層
+114.1246609|22.3555426|了竇 LiudoStudio|26 Kwai Fung Cres, Kwai Chung, Hong Kong
+114.168678|22.305861|Hollywood Night Club|3/F, Booman House, Jordan Rd, Jordan, Hong Kong
+114.169538|22.314823|富城卡拉OK夜總會|2, Wai Wah Commercial Building, Portland St, Mong Kok, Hong Kong
+114.182437|22.280818|銅鑼吧|Hong Kong, 波斯富街18號銅鑼閣B層
+114.170948|22.278599|卡樂斯夜總會|68～82 Jaffe Rd, Wan Chai, Hong Kong
+114.1821833|22.2776822|club fondle|Hong Kong, 8/F, Bartlock Centre, 3 Yiu Wa Street, Causeway Bay, H.K.銅鑼灣 耀華街3號 百樂中心 8樓 club fondle
+114.1695346|22.3149044|金蘋果卡拉OK夜總會|Hong Kong, Mong Kok, Portland St, 109號6樓
+114.170984|22.305991|Old Place Night Club|88號 Parkes St, Yau Ma Tei, Hong Kong
+114.169269|22.315663|Jackpot Night Club|Mee Cheong Building, Hong Kong
+114.16499|22.324604|New City Karaoke Night Club|224 (G/F) & 208-228 (1/F), Tong Mi Road, Tai Kok Tsui, Kowloon, Hong Kong
+114.156792|22.280591|KAVIA CLUB|18號 On Lan St, Central, Hong Kong
+114.1697678|22.3173931|Eva Paradise|Wu Sang House, 655 Nathan Rd, Mong Kok, Hong Kong
+114.177859|22.29772|新富都會|Hong Kong, 麽地道66號尖沙咀中心A2&B、3層
+114.1706491|22.2784359|Escape|64 Jaffe Rd, Wan Chai, Hong Kong
+114.168945|22.315005|Carlton Night Club|3/F, 431-437 Shanghai St, Yau Ma Tei, Hong Kong
+114.178758|22.30062|舞臺|Hong Kong, 科學館道14號新文華中心B1、B3-4
+114.1546879|22.2819238|Midnight & Co.|79 Wyndham St, Central, Hong Kong
+114.1702072|22.2786117|新加美夜總會|號, 17 Fenwick St, Wan Chai, Hong Kong
+114.18534|22.277681|Pig Pig Joyce Pub|號, 14 Hoi Ping Rd, Causeway Bay, Hong Kong
+114.186025|22.279486|智慧星樂園|Hong Kong, Causeway Bay, Yee Wo St, San Kei Tower, 5層
+114.1674864|22.323747|太子指壓|Hong Kong, Mong Kok, Prince Edward Rd W, 131號號
+114.171022|22.304991|金色年代夜總會|Jordan, Hong Kong
+114.168109|22.323737|研藝懷舊社交舞練習場|Edward Mansion, 13H Prince Edward Rd W, Prince Edward, Hong Kong
+114.1547964|22.2807134|Bungalow|G/F The Centrium, 60 Wyndham Street, Central, Hong Kong
+114.1741949|22.2967282|No 8 Club Lounge|8 Minden Ave, Tsim Sha Tsui, Hong Kong
+114.169358|22.315745|瓊林舞廳夜總會|Mong Kok, Hong Kong
+114.173603|22.296645|新東方皇宮夜總會|Tsim Sha Tsui, Hong Kong
+114.1702531|22.3211229|旺角道－通菜街－金旺角|Mong Kok Rd, Mong Kok, Hong Kong
+114.169537|22.314871|國際夜總會|Hong Kong, Mong Kok, Portland St, 109號號地下
+114.168693|22.305765|帝都夜總會|Booman House, Jordan Rd, Jordan, Hong Kong
+114.1282222|22.3573131|葵芳A|Kwai Fong, Hong Kong
+114.16827|22.320022|富來夜總會|Hong Kong, 快富街5F IFE STREET
+114.171029|22.304956|Venice Night Club|65號 Pilkem St, Yau Ma Tei, Hong Kong
+114.170206|22.30504|Broadway Night Club|Jordan, Hong Kong
+114.156499|22.280549|PLAY|On Hing Building, 1 On Hing Terrace, Central, Hong Kong
+114.1742855|22.2988862|Club De Angel|22 Cameron Rd, Tsim Sha Tsui, Hong Kong
+114.1689002|22.298696|THE BAR IKENAMI|Hong Kong, Tsim Sha Tsui, Canton Plaza, 10層
+114.170066|22.305536|Jin Jiali Nightclub|1/F, Woosung House, 127 Woosung St, Jordan, Hong Kong
+114.17218|22.30476|今日都會夜總會|Jordan, Hong Kong
+114.167669|22.32204|多佳麗夜總會|Prince Edward, Hong Kong
+114.169715|22.316923|世紀夜總會|Sun Hing Building, Nathan Rd, Mong Kok, Hong Kong
+114.167052|22.324772|新西班牙舞廳|21 Ki Lung St, Prince Edward, Hong Kong
+114.1694111|22.3136134|煌朝卡拉OK夜總會|Yau Ma Tei, Hong Kong
+114.1911526|22.3288151|Super Bar|5b Nga Tsin Wai Rd, Kowloon City, Hong Kong
+114.2211026|22.3104411|EFUN COMPANY LIMITED|41 Tsun Yip St, Kwun Tong, Hong Kong
+114.172861|22.278283|三藩市夜總會|131 Lockhart Rd, Wan Chai, Hong Kong
+114.169572|22.304954|富麗華夜總會|Hong Kong, 廟街237～247數碼廣場2樓
+114.170712|22.304612|怡情島卡拉OK夜總會|50 Parkes St, Jordan, Hong Kong
+114.168594|22.320233|大豪客夜總會|Mong Kok, Hong Kong
+114.169053|22.316491|花花世界夜總會|Mong Kok, Hong Kong
+114.16922|22.316212|百合花夜總會|Mong Kok, Hong Kong
+114.170096|22.320749|Golden Mongkok Karaoke Night Club|1/F, Yau Shing Mansion, 129-139 Tung Choi Street, Mong Kok, Kowloon, Hong Kong
+114.170319|22.313853|Jin Lai Cheng Karaoke Night Club|1/F, 497-497A Nathan Road, Yau Ma Tei, Kowloon, Hong Kong
+114.147199|22.337692|ME Pole Studio - Mighty Elegant|Unit B-15-6 3 Block, Hong Kong Spinners Industrial Building, 760 Cheung Sha Wan Rd, Lai Chi Kok, Hong Kong
+114.168693|22.305765|星寶夜總會|Booman House, Jordan Rd, Jordan, Hong Kong
+114.168109|22.323737|國先聲樂苑|Hong Kong, Prince Edward, Prince Edward Rd W, Edward Mansion, 8J
+114.155575|22.280884|Club|Central, Hong Kong
+114.169417|22.313367|煌朝夜總會|Yau Ma Tei, Hong Kong
+114.170271|22.310477|艷陽天歌座|Yau Ma Tei, Hong Kong
+114.168276|22.321764|新嘉樂斯夜總會|Mong Kok, Hong Kong
+114.168312|22.323525|太陽城夜總會|Hong Kong, Prince Edward, Nathan Rd, 749A號
+114.156513|22.2805285|Levels|2/F, On Hing Building, 1 On Hing Terrace, Central, Hong Kong
+114.16901|22.31839|金砵蘭|Mong Kok, Hong Kong
+114.168824|22.30572|星色卡拉OK夜總會|Jordan, Hong Kong
+114.1703172|22.3105969|Canton Singing House|49 Temple St, Yau Ma Tei, Hong Kong
+114.168044|22.324548|四邑會所|Hong Kong, Prince Edward, Nathan Rd, 757號6層
+114.155344|22.280827|VAULT|Unit 2E, 38-44 D'Aguilar Street, Ho Lee Commercial Building, Lan Kwai Fong, Central, Hong Kong
+114.169715|22.316923|亞洲夜總會|Sun Hing Building, Nathan Rd, Mong Kok, Hong Kong
+114.169572|22.304954|新華登舞廳夜總會|Hong Kong, 廟街237～247號數碼廣場1樓
+114.1922849|22.3841328|沙龍會|Sha Tin, Hong Kong
+114.183175|22.280946|FIT舞舘|Hong Kong, Causeway Bay, Jaffe Rd, Richmond Plaza, 層01
+114.16942|22.314906|New International Night Club|1/F, Wai Wah Commercial Building, 109-113 Portland St, Mong Kok, Hong Kong
+114.169417|22.313367|皇宮舞廳|Yau Ma Tei, Hong Kong
+114.169012|22.318391|新都會|Mong Kok, Hong Kong
+114.169419|22.313381|星座卡拉OK夜總會|Yau Ma Tei, Hong Kong
+114.171763|22.318373|金儷星鳳凰於飛懷舊歌舞|Hong Kong, 旺角洗衣街39號金雞廣場字3樓
+114.153037|22.283305|Baxter's Rave Cave|2 Pak Tsz Lane, Central, Hong Kong
+114.155293|22.28076|Volar|Ho Lee Commercial Building, Basement 38, 44 D'Aguilar St, Central, Hong Kong
+114.154622|22.281912|OMA|LB/F, Harilela House, No. 79 Wyndham Street, Central, Hong Kong
+114.1744624|22.2971146|ラ・ドルチェ・ノッテ|3f, 30 Mody Rd, Tsim Sha Tsui, Hong Kong
+114.1773223|22.2990883|長今會所|Hong Kong, Tsim Sha Tsui East, Mody Rd, 67號LG28-40半島中心
+114.171291|22.306456|金漢娛樂城|Yau Ma Tei, Hong Kong
+114.176482|22.297587|皇室韓國CLUB|Hong Kong, Tsim Sha Tsui East, Mody Rd, 61號, Mirror Tower, 2層
+114.151679|22.286855|宀 Club|4F, 279 Des Voeux Rd Central, Sheung Wan, Hong Kong
+114.168187|22.320435|金太陽卡拉OK夜總會（快富街）|Hong Kong, 快富街2-6號 G/F 1D
+114.1698022|22.3154814|多利來夜總會|2, 37 Dundas Street, Mong Kok, Hong Kong
