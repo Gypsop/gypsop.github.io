@@ -8,7 +8,7 @@ import geocoder
 import time
 
 request_result = []
-location_list = open("深圳_14天以上.txt", "r", encoding='UTF-8').read().split("\n")#["香港理工大学", "红磡站", "旺角"]#
+location_list = open("address.txt", "r", encoding='UTF-8').read().split("\n")#location_list格式如：["香港理工大学", "红磡站", "旺角"]#
 for each_location in location_list:
     print("Currently processing " + each_location + ", waiting for 1 second(s) for a long-term using...")
     time.sleep(1)
