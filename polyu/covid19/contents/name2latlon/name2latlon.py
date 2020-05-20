@@ -13,7 +13,7 @@ for each_location in location_list:
     print("Currently processing " + each_location + ", waiting for 1 second(s) for a long-term using...")
     time.sleep(1)
     print("End waiting, go on processing!")
-    latlon = geocoder.google(each_location, key = "AIzaSyDHHFp4x6vKyYcyf_GKiJ8c2E9ygpsklds").latlng
+    latlon = geocoder.google(each_location, key = "*****").latlng
     print("Resuest result:", latlon)
     if latlon == None:
         request_result.append([])
