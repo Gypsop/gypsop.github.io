@@ -93,10 +93,10 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
-permalink: /blog/:year/:title/
-lsi: false # produce an index for related posts
+blog_name: Jeffrey's Notes! # blog_name will be displayed in your blog page
+blog_description: 
+permalink: /blog/:categories/:title/
+lsi: true # produce an index for related posts
 
 # Pagination
 pagination:
@@ -279,8 +279,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [ZHU]
+  first_name: [Xiaosheng]
 
   style: apa
   locale: en
