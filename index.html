@@ -1,42 +1,101 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en-us">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gypsop's Personal Website</title>
+    <title>Jeffrey's Home - Under Construction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/momo-signature@latest/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ubuntu@latest/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/lobster-two@latest/index.css">
     <style>
-        body {
-            background: #f7f7f7;
-            color: #333;
-            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container {
-            background: #fff;
-            padding: 2rem 3rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            overflow-x: hidden;
+        }
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(0, 31, 63, 0.9); /* Navy Blue */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            font-family: 'Momo Signature', cursive;
+            font-size: 1.5rem;
+        }
+        .navbar nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .nav-icon {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+            vertical-align: middle;
+        }
+        .section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #333; /* Simple dark gray background */
+        }
+        .content {
+            position: relative;
+            z-index: 10;
             text-align: center;
+            color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5vh 20px;
         }
-        h1 {
+        .content h2 {
+            font-family: 'Momo Signature', cursive;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        p {
-            color: #888;
-            font-size: 1.1rem;
+        .content p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Under Construction</h1>
-        <p>Welcome! This personal website is currently under construction.<br>Please check back soon.</p>
+    <div class="navbar">
+        <h1>Jeffrey's Home</h1>
+        <nav>
+            <a href="mailto:zhxsh1225@gmail.com"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/gmail.svg" alt="Gmail" class="nav-icon"></a>
+            <a href="mailto:xiaosheng.zhu@connect.polyu.hk"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/microsoftoutlook.svg" alt="PolyU Email" class="nav-icon"></a>
+            <a href="https://www.linkedin.com/in/XiaoshengZhu" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/linkedin.svg" alt="LinkedIn" class="nav-icon"></a>
+        </nav>
     </div>
+
+    <div class="section">
+        <div class="content">
+            <h2>Under Construction</h2>
+            <p>Welcome! This personal website is currently under construction.<br>Please check back soon for updates.</p>
+        </div>
+    </div>
+
+    <script>
+        // No animations needed for simple page
+    </script>
 </body>
 </html>
