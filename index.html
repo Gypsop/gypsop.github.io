@@ -36,6 +36,17 @@
             font-family: 'Momo Signature', cursive;
             font-size: 1.5rem;
         }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .navbar nav {
+            display: flex;
+        }
         .navbar nav a {
             color: #fff;
             text-decoration: none;
@@ -46,6 +57,28 @@
             height: 30px;
             filter: brightness(0) invert(1);
             vertical-align: middle;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .navbar nav {
+                display: none;
+                position: absolute;
+                top: calc(100% + 10px);
+                right: 20px;
+                background: rgba(0, 31, 63, 0.9);
+                flex-direction: column;
+                padding: 10px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            }
+            .navbar nav.open {
+                display: flex;
+            }
+            .navbar nav a {
+                margin: 5px 0;
+            }
         }
         .section {
             min-height: 100vh;
@@ -80,10 +113,12 @@
 <body>
     <div class="navbar">
         <h1>Jeffrey's Home</h1>
+        <button class="menu-toggle">☰</button>
         <nav>
             <a href="mailto:zhxsh1225@gmail.com"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/gmail.svg" alt="Gmail" class="nav-icon"></a>
             <a href="mailto:xiaosheng.zhu@connect.polyu.hk"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/microsoftoutlook.svg" alt="PolyU Email" class="nav-icon"></a>
             <a href="https://www.linkedin.com/in/XiaoshengZhu" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/linkedin.svg" alt="LinkedIn" class="nav-icon"></a>
+            <a href="https://github.com/Gypsop" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/github.svg" alt="GitHub" class="nav-icon"></a>
         </nav>
     </div>
 
@@ -95,7 +130,19 @@
     </div>
 
     <script>
-        // No animations needed for simple page
+        // Toggle mobile menu
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar nav').classList.toggle('open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const nav = document.querySelector('.navbar nav');
+            if (!navbar.contains(event.target)) {
+                nav.classList.remove('open');
+            }
+        });
     </script>
 </body>
 </html>
