@@ -231,23 +231,26 @@
         }
         .px-layer {
             position: absolute; left: 0; right: 0; bottom: 0;
-            height: calc(100% + 60vh); z-index: 3;
+            height: 100%; z-index: 3;
             background-repeat: repeat-x;
             background-position: bottom center;
-            background-size: auto 72vh;
-            /* Bottom-edge fade so parallax scroll doesn't expose hard edges.
-               Static mask — rasterized once per layer, no per-frame cost. */
-            -webkit-mask-image: linear-gradient(to top, transparent 0%, black 10%);
-                    mask-image: linear-gradient(to top, transparent 0%, black 10%);
+            /* Image slightly taller than container (Firewatch: 1038px in 1000px).
+               Mountain PNGs have solid fill at the bottom → no hard edge exposure.
+               No filter, no mask — pure PNG compositing like the Firewatch original. */
+            background-size: auto 76vh;
         }
-        /* Mountain glow disabled – light sky makes silhouettes visible
-           without any radial-gradient compositing. Element stays in DOM
-           for parallax JS (data-speed) but paints nothing. */
-        .px-mountain-glow {
+        /* Ground cover: sits BEHIND all px-layers (z:2 < z:3).
+           Stays fixed at the bottom of px-stage (no data-speed).
+           As px-layers translate upward at different speeds, this
+           opaque fill shows through below their bottom edges,
+           covering the staircase-gap and sky exposure.
+           Gradient blends from transparent (top) into #about's
+           background color → seamless section transition. */
+        .px-ground {
             position: absolute; left: 0; right: 0; bottom: 0;
-            height: 84%; z-index: 2;
+            height: 60vh; z-index: 2;
             pointer-events: none;
-            background: none;
+            background: linear-gradient(to bottom, transparent 0%, #0a0f1e 55%);
         }
         .px-overlay {
             position: absolute; inset: 0; z-index: 8;
@@ -259,8 +262,8 @@
             );
         }
         @media (max-width: 768px) {
-            #intro { min-height: 150vh; }  /* shorter scroll budget on mobile */
-            .px-layer { background-size: auto 52vh; }
+            #intro { min-height: 150vh; }
+            .px-layer { background-size: auto 56vh; }
         }
 
         /* --- Content wrapper --- */
@@ -711,9 +714,10 @@
         <div class="px-stage">
             <!-- Multi-layer parallax scene (Firewatch-style) -->
             <div class="px-sky"></div>
-            <!-- px-mountain-glow BEFORE px-layers so it sits BEHIND them (same z=2, earlier DOM = lower) -->
-            <!-- data-speed: moves with mountain mass so the glow tracks the ridges during scroll -->
-            <div class="px-mountain-glow" data-speed="18"></div>
+            <!-- Ground cover: static dark fill behind px-layers (z:2 < z:3).
+                 Covers the staircase gaps as layers translate up at different speeds.
+                 No data-speed → stays fixed at viewport bottom. -->
+            <div class="px-ground"></div>
             <div class="px-layer" data-speed="3"  style="background-image:url('parallax/parallax1.png')"></div>
             <div class="px-layer" data-speed="6"  style="background-image:url('parallax/parallax2.png')"></div>
             <div class="px-layer" data-speed="10" style="background-image:url('parallax/parallax3.png')"></div>
@@ -1161,81 +1165,94 @@
 
         // ══════════════════════════════════════════════════════════
         // Unified scroll / resize pipeline  (single rAF, cached layout)
+        // Parallax ported from Firewatch original: translate3d, no
+        // will-change management, no mask, no filter.
         // ══════════════════════════════════════════════════════════
         (function () {
             const allSections  = Array.from(document.querySelectorAll('.section'));
             const progressBar  = document.querySelector('.progress-bar');
             const backToTop    = document.querySelector('.back-to-top');
             const introEl      = document.getElementById('intro');
-            const pxLayerEls   = Array.from(document.querySelectorAll('#intro [data-speed]'));
+            const aboutEl      = document.getElementById('about');
+            // Only select actual px-layer elements (skip px-ground)
+            const pxLayerEls   = Array.from(document.querySelectorAll('#intro .px-layer[data-speed]'));
             const isReduced    = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            // Pre-parse speed values once (avoids parseFloat per layer per frame)
-            const pxSpeeds = pxLayerEls.map(l => (parseFloat(l.dataset.speed) || 0) * 0.01);
+            // Pre-parse speed values once (Firewatch: speed / 100)
+            const pxSpeeds = pxLayerEls.map(function (l) {
+                return (parseFloat(l.dataset.speed) || 0) / 100;
+            });
 
             // ── Cached layout values (updated on resize only) ────
-            let vh, scrollMax, pxEnd;
+            let vh, scrollMax, pxEnd, introHeight;
             function cacheLayout() {
-                vh        = window.innerHeight;
-                scrollMax = document.documentElement.scrollHeight - vh;
-                pxEnd     = introEl ? Math.max(0, introEl.offsetHeight - vh) : 0;
+                vh          = window.innerHeight;
+                scrollMax   = document.documentElement.scrollHeight - vh;
+                introHeight = introEl ? introEl.offsetHeight : 2 * vh;
+                pxEnd       = Math.max(0, introHeight - vh);
                 // Sticky stacking: dynamic top for tall sections
-                for (let i = 0; i < allSections.length; i++) {
-                    const s = allSections[i];
+                for (var i = 0; i < allSections.length; i++) {
+                    var s = allSections[i];
                     if (s.id === 'intro') { s.style.top = '0px'; continue; }
                     s.style.top = s.offsetHeight > vh ? (vh - s.offsetHeight) + 'px' : '0px';
                 }
             }
             cacheLayout();
 
-            // ── will-change management ───────────────────────────
-            // Keep GPU layers promoted while #intro is visible;
-            // only demote when it leaves the viewport.
-            // This avoids the expensive re-rasterize cycle that the
-            // old 400ms toggle caused (8 layers × drop-shadow filter).
-            let introVisible = true;
-            if (pxLayerEls.length && introEl && !isReduced) {
-                for (let i = 0; i < pxLayerEls.length; i++) {
-                    pxLayerEls[i].style.willChange = 'transform';
-                }
+            // Track #intro visibility to skip parallax work when off-screen
+            var introVisible = true;
+            if (introEl) {
                 new IntersectionObserver(function (entries) {
                     introVisible = entries[0].isIntersecting;
-                    const val = introVisible ? 'transform' : 'auto';
-                    for (let i = 0; i < pxLayerEls.length; i++) {
-                        pxLayerEls[i].style.willChange = val;
-                    }
                 }, { threshold: 0 }).observe(introEl);
             }
 
             // ── Single rAF-gated scroll handler ─────────────────
-            let ticking = false;
+            var ticking = false;
             function onScroll() {
                 if (ticking) return;
                 ticking = true;
                 requestAnimationFrame(function () {
-                    const st = window.scrollY;
+                    var st = window.scrollY;
 
-                    // Progress bar (compositor-only: scaleX transform)
+                    // Progress bar
                     progressBar.style.transform = 'scaleX(' + (scrollMax > 0 ? st / scrollMax : 0) + ')';
 
                     // Back-to-top visibility
                     backToTop.classList.toggle('show', st > 300);
 
-                    // Covered state (shadow toggle between stacked sections)
-                    const covThreshold = vh * 0.1;
-                    for (let i = 0, len = allSections.length - 1; i < len; i++) {
+                    // Covered state (uses visual getBCR which includes transforms)
+                    var covThreshold = vh * 0.1;
+                    for (var i = 0, len = allSections.length - 1; i < len; i++) {
                         allSections[i].classList.toggle(
                             'covered',
                             allSections[i + 1].getBoundingClientRect().top <= covThreshold
                         );
                     }
 
-                    // Parallax layers (skip when #intro is off-screen)
+                    // Parallax — Firewatch method: translate3d, skip when off-screen
                     if (introVisible && !isReduced && pxLayerEls.length) {
-                        const t = st < pxEnd ? st : pxEnd;
-                        for (let i = 0; i < pxLayerEls.length; i++) {
-                            pxLayerEls[i].style.transform = 'translateY(-' + (t * pxSpeeds[i]) + 'px)';
+                        var t = st < pxEnd ? st : pxEnd;
+                        for (var j = 0; j < pxLayerEls.length; j++) {
+                            var yPos = -(t * pxSpeeds[j]);
+                            pxLayerEls[j].style.transform = 'translate3d(0px, ' + yPos + 'px, 0px)';
                         }
+                    }
+
+                    // #about rises from viewport bottom in sync with the parallax scroll,
+                    // covering any gaps exposed below the faster-moving layers.
+                    //
+                    // Formula: translateY = (st/introHeight - 1) * (introHeight - vh)
+                    //   st = 0            → translateY = -(introHeight-vh)  → about top at viewport bottom
+                    //   st = introHeight  → translateY = 0                  → normal sticky position
+                    //
+                    // This is mathematically identical to the fastest layer's (speed=50) bottom
+                    // edge position during the parallax phase, so #about (z-index:20) perfectly
+                    // seals the gap beneath all slower layers throughout the scroll.
+                    if (aboutEl && !isReduced) {
+                        var extraH = Math.max(0, introHeight - vh);
+                        var aboutShift = Math.min(0, (st / introHeight - 1) * extraH);
+                        aboutEl.style.transform = 'translateY(' + aboutShift + 'px)';
                     }
 
                     ticking = false;
