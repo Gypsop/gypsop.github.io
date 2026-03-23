@@ -218,59 +218,45 @@
         }
         .px-sky {
             position: absolute; inset: 0; z-index: 1;
-            /* Deep navy gradient sky – coolest at top, slightly lighter at horizon */
+            /* Light sky gradient – dark navy top (text contrast) fading to
+               pale blue horizon so raw mountain PNGs read as natural silhouettes
+               without any expensive drop-shadow / glow filters. */
             background: linear-gradient(to bottom,
-                #00050e 0%,
-                #000d24 25%,
-                #001133 55%,
-                #001a4a 100%
+                #0a1a35 0%,
+                #15325a 22%,
+                #3a6d9e 50%,
+                #6ba3d0 78%,
+                #9ac5e3 100%
             );
         }
         .px-layer {
             position: absolute; left: 0; right: 0; bottom: 0;
-            height: calc(100% + 60vh); z-index: 3;  /* above glow (z=2), below overlay (z=8) */
+            height: calc(100% + 60vh); z-index: 3;
             background-repeat: repeat-x;
             background-position: bottom center;
             background-size: auto 72vh;
-            /* Drop-shadow traces PNG alpha → white-blue rim light on each ridge.
-               Cost: rasterized ONCE per scroll-start (not per frame), so GPU-safe
-               as long as will-change is managed dynamically (see JS). */
-            filter: hue-rotate(200deg) saturate(0.65) brightness(0.68)
-                    drop-shadow(0 -10px 28px rgba(140,210,255,0.70))
-                    drop-shadow(0  -2px  8px rgba(200,235,255,0.50));
+            /* Bottom-edge fade so parallax scroll doesn't expose hard edges.
+               Static mask — rasterized once per layer, no per-frame cost. */
             -webkit-mask-image: linear-gradient(to top, transparent 0%, black 10%);
                     mask-image: linear-gradient(to top, transparent 0%, black 10%);
         }
-        /* Back-glow: sits BEHIND mountains (z=2 < px-layer z=3).
-           Mountains silhouette against it, creating authentic backlit ridge effect.
-           Moves with parallax at mid-range speed so it tracks the mountain mass. */
+        /* Mountain glow disabled – light sky makes silhouettes visible
+           without any radial-gradient compositing. Element stays in DOM
+           for parallax JS (data-speed) but paints nothing. */
         .px-mountain-glow {
             position: absolute; left: 0; right: 0; bottom: 0;
             height: 84%; z-index: 2;
             pointer-events: none;
-            background:
-                /* Broad atmospheric horizon light */
-                radial-gradient(ellipse 140% 65% at 50% 90%, rgba(22,78,200,0.62) 0%, transparent 52%),
-                /* Bright central light-source behind central ridge */
-                radial-gradient(ellipse  65% 32% at 50% 100%, rgba(60,150,255,0.55) 0%, transparent 48%),
-                /* Left-side ridge backlight */
-                radial-gradient(ellipse  55% 30% at 20%  98%, rgba(45,128,245,0.32) 0%, transparent 45%),
-                /* Right-side ridge backlight */
-                radial-gradient(ellipse  55% 30% at 80%  96%, rgba(45,128,245,0.32) 0%, transparent 45%),
-                /* Narrow luminous skyline streak just above the ridges */
-                radial-gradient(ellipse 110%  9% at 50%  71%, rgba(90,170,255,0.22) 0%, transparent 55%);
+            background: none;
         }
         .px-overlay {
             position: absolute; inset: 0; z-index: 8;
-            /* Atmospheric vignette + horizon glow */
-            background:
-                radial-gradient(ellipse 70% 28% at 50% 100%, rgba(8,38,110,0.50) 0%, transparent 70%),
-                linear-gradient(to bottom,
-                    rgba(0,6,22,0.40) 0%,
-                    rgba(0,4,14,0.06) 42%,
-                    rgba(0,6,20,0.30) 80%,
-                    rgba(0,2,10,0.65) 100%
-                );
+            /* Subtle top-only darkening for white hero text contrast;
+               bottom left transparent so light sky + mountains show through. */
+            background: linear-gradient(to bottom,
+                rgba(0,8,24,0.30) 0%,
+                transparent 45%
+            );
         }
         @media (max-width: 768px) {
             #intro { min-height: 150vh; }  /* shorter scroll budget on mobile */
@@ -650,12 +636,12 @@
             position: fixed; right: 20px; bottom: 80px;
             width: 40px; height: 40px; border-radius: 50%;
             border: 1px solid rgba(255,255,255,0.22);
-            background: rgba(0,31,63,0.75); color: #fff;
+            background: rgba(0,31,63,0.92); color: #fff;
             font-size: 1rem; cursor: pointer;
             opacity: 0; pointer-events: none;
             transform: translateY(10px);
             transition: opacity 0.3s, transform 0.3s, background 0.2s;
-            backdrop-filter: blur(8px); z-index: 100;
+            z-index: 100;
         }
         .back-to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
         .back-to-top:hover { background: rgba(0,31,63,1); }
@@ -663,9 +649,8 @@
         /* ===================== FOOTER ===================== */
         footer {
             position: fixed; bottom: 12px; right: 20px;
-            background: rgba(0,31,63,0.8); color: rgba(255,255,255,0.55);
+            background: rgba(0,31,63,0.92); color: rgba(255,255,255,0.55);
             padding: 4px 14px; border-radius: 20px; font-size: 0.7rem;
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
             z-index: 100; letter-spacing: 0.03em;
         }
@@ -1125,7 +1110,7 @@
         // ── Floating particles (rate-limited + paused when tab hidden) ────────
         const MAX_PARTICLES = 4;
         function spawnParticle() {
-            if (document.hidden) return;                       // tab not visible
+            if (document.hidden) return;
             if (document.querySelectorAll('.floating-element').length >= MAX_PARTICLES) return;
             const el = document.createElement('div');
             el.className = 'floating-element';
@@ -1135,7 +1120,7 @@
             document.body.appendChild(el);
             setTimeout(() => el.remove(), parseFloat(dur) * 1000 + 200);
         }
-        setInterval(spawnParticle, 6000);  // halved spawn rate
+        setInterval(spawnParticle, 6000);
 
         // ── Reveal on scroll ────────────────────────────────────
         const revealObserver = new IntersectionObserver(entries => {
@@ -1174,86 +1159,94 @@
             });
         });
 
-        // ── Sticky stacking: dynamic top for tall sections ──────
-        const allSections = Array.from(document.querySelectorAll('.section'));
-        function updateSectionTops() {
-            const vh = window.innerHeight;
-            allSections.forEach(s => {
-                // #intro is intentionally 200vh for parallax scroll budget — never pull it up
-                if (s.id === 'intro') { s.style.top = '0px'; return; }
-                s.style.top = s.offsetHeight > vh ? `${vh - s.offsetHeight}px` : '0px';
-            });
-        }
-        function updateCoveredState() {
-            const vh = window.innerHeight;
-            allSections.forEach((s, i) => {
-                const next = allSections[i + 1];
-                if (next) s.classList.toggle('covered', next.getBoundingClientRect().top <= vh * 0.1);
-            });
-        }
-        updateSectionTops();
-        window.addEventListener('resize', updateSectionTops, { passive: true });
-        window.addEventListener('scroll', updateCoveredState, { passive: true });
-        updateCoveredState();
+        // ══════════════════════════════════════════════════════════
+        // Unified scroll / resize pipeline  (single rAF, cached layout)
+        // ══════════════════════════════════════════════════════════
+        (function () {
+            const allSections  = Array.from(document.querySelectorAll('.section'));
+            const progressBar  = document.querySelector('.progress-bar');
+            const backToTop    = document.querySelector('.back-to-top');
+            const introEl      = document.getElementById('intro');
+            const pxLayerEls   = Array.from(document.querySelectorAll('#intro [data-speed]'));
+            const isReduced    = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // ── Progress bar + back-to-top ──────────────────────────
-        const progressBar = document.querySelector('.progress-bar');
-        const backToTop   = document.querySelector('.back-to-top');
-        function onScroll() {
-            const st = document.documentElement.scrollTop;
-            const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            progressBar.style.transform = `scaleX(${sh > 0 ? st / sh : 0})`;
-            backToTop.classList.toggle('show', st > 300);
-        }
-        window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
-        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            // Pre-parse speed values once (avoids parseFloat per layer per frame)
+            const pxSpeeds = pxLayerEls.map(l => (parseFloat(l.dataset.speed) || 0) * 0.01);
 
-        // ── Firewatch-style parallax hero ────────────────────────
-        const pxLayers = document.querySelectorAll('#intro [data-speed]');  // includes px-mountain-glow
-        const introEl  = document.getElementById('intro');
-        if (pxLayers.length && introEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            let pxTicking   = false;
-            let pxIdleTimer = null;
-            let pxWillActive = false;
+            // ── Cached layout values (updated on resize only) ────
+            let vh, scrollMax, pxEnd;
+            function cacheLayout() {
+                vh        = window.innerHeight;
+                scrollMax = document.documentElement.scrollHeight - vh;
+                pxEnd     = introEl ? Math.max(0, introEl.offsetHeight - vh) : 0;
+                // Sticky stacking: dynamic top for tall sections
+                for (let i = 0; i < allSections.length; i++) {
+                    const s = allSections[i];
+                    if (s.id === 'intro') { s.style.top = '0px'; continue; }
+                    s.style.top = s.offsetHeight > vh ? (vh - s.offsetHeight) + 'px' : '0px';
+                }
+            }
+            cacheLayout();
 
-            // Toggle will-change only during active scroll; idle → 'auto'
-            // so the compositor drops the 8 GPU layers when nothing is moving.
-            function setPxWillChange(on) {
-                if (pxWillActive === on) return;
-                pxWillActive = on;
-                pxLayers.forEach(l => { l.style.willChange = on ? 'transform' : 'auto'; });
+            // ── will-change management ───────────────────────────
+            // Keep GPU layers promoted while #intro is visible;
+            // only demote when it leaves the viewport.
+            // This avoids the expensive re-rasterize cycle that the
+            // old 400ms toggle caused (8 layers × drop-shadow filter).
+            let introVisible = true;
+            if (pxLayerEls.length && introEl && !isReduced) {
+                for (let i = 0; i < pxLayerEls.length; i++) {
+                    pxLayerEls[i].style.willChange = 'transform';
+                }
+                new IntersectionObserver(function (entries) {
+                    introVisible = entries[0].isIntersecting;
+                    const val = introVisible ? 'transform' : 'auto';
+                    for (let i = 0; i < pxLayerEls.length; i++) {
+                        pxLayerEls[i].style.willChange = val;
+                    }
+                }, { threshold: 0 }).observe(introEl);
             }
 
-            function driveParallax() {
-                // Activate GPU promotion just-in-time
-                setPxWillChange(true);
-                // Schedule deactivation 400 ms after scroll stops
-                clearTimeout(pxIdleTimer);
-                pxIdleTimer = setTimeout(() => setPxWillChange(false), 400);
+            // ── Single rAF-gated scroll handler ─────────────────
+            let ticking = false;
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(function () {
+                    const st = window.scrollY;
 
-                if (pxTicking) return;
-                pxTicking = true;
-                requestAnimationFrame(() => {
-                    const pxEnd = Math.max(0, introEl.offsetHeight - window.innerHeight);
-                    const t     = Math.min(window.scrollY, pxEnd);
-                    pxLayers.forEach(layer => {
-                        const speed = parseFloat(layer.dataset.speed) || 0;
-                        layer.style.transform = `translateY(-${(t * speed / 100).toFixed(2)}px)`;
-                    });
-                    pxTicking = false;
+                    // Progress bar (compositor-only: scaleX transform)
+                    progressBar.style.transform = 'scaleX(' + (scrollMax > 0 ? st / scrollMax : 0) + ')';
+
+                    // Back-to-top visibility
+                    backToTop.classList.toggle('show', st > 300);
+
+                    // Covered state (shadow toggle between stacked sections)
+                    const covThreshold = vh * 0.1;
+                    for (let i = 0, len = allSections.length - 1; i < len; i++) {
+                        allSections[i].classList.toggle(
+                            'covered',
+                            allSections[i + 1].getBoundingClientRect().top <= covThreshold
+                        );
+                    }
+
+                    // Parallax layers (skip when #intro is off-screen)
+                    if (introVisible && !isReduced && pxLayerEls.length) {
+                        const t = st < pxEnd ? st : pxEnd;
+                        for (let i = 0; i < pxLayerEls.length; i++) {
+                            pxLayerEls[i].style.transform = 'translateY(-' + (t * pxSpeeds[i]) + 'px)';
+                        }
+                    }
+
+                    ticking = false;
                 });
             }
 
-            window.addEventListener('scroll', driveParallax, { passive: true });
-            window.addEventListener('resize', driveParallax, { passive: true });
-            driveParallax();
-
-            // Release all GPU layers immediately when #intro is no longer visible
-            new IntersectionObserver(([e]) => {
-                if (!e.isIntersecting) { clearTimeout(pxIdleTimer); setPxWillChange(false); }
-            }, { threshold: 0 }).observe(introEl);
-        }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', function () { cacheLayout(); onScroll(); }, { passive: true });
+            onScroll();
+            backToTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        })();
     </script>
 </body>
 </html>
