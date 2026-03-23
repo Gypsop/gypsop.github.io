@@ -201,7 +201,21 @@
         }
 
         /* ===== PARALLAX HERO ===== */
-        #intro { overflow: hidden; }
+        /* #intro is 200vh: gives 100vh of scroll budget for the parallax effect.
+           display:block so .px-stage (not flex children) controls layout.          */
+        #intro { min-height: 200vh; display: block; overflow: visible; }
+
+        /* px-stage sticks for the full 200vh of #intro.
+           All visual content lives here, so it always fills exactly one viewport. */
+        .px-stage {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .px-sky {
             position: absolute; inset: 0; z-index: 1;
             /* Deep navy gradient sky – coolest at top, slightly lighter at horizon */
@@ -213,16 +227,32 @@
             );
         }
         .px-layer {
-            /* Anchor to bottom; taller than section so upward translate never gaps */
             position: absolute; left: 0; right: 0; bottom: 0;
-            height: calc(100% + 220px); z-index: 2;
+            /* Extra 60vh = buffer for max translateY (speed=50 × 100vh pxEnd / 100) */
+            height: calc(100% + 60vh); z-index: 2;
             background-repeat: repeat-x;
             background-position: bottom center;
             background-size: auto 72vh;
-            /* Shift warm orange/red palette → cool navy blue-slate */
-            filter: hue-rotate(200deg) saturate(0.55) brightness(0.6);
-            /* transform is compositor-only → zero repaint per scroll frame */
+            /* Palette shift + brighter for glow visibility.
+               drop-shadow follows PNG alpha → blue rim light on mountain ridges. */
+            filter: hue-rotate(200deg) saturate(0.65) brightness(0.78)
+                    drop-shadow(0 -12px 32px rgba(50,130,255,0.55))
+                    drop-shadow(0  -3px 10px rgba(120,200,255,0.35));
+            /* Fade mountain bases → eliminates hard rectangular bottom-edge artifact */
+            -webkit-mask-image: linear-gradient(to top, transparent 0%, black 10%);
+                    mask-image: linear-gradient(to top, transparent 0%, black 10%);
             will-change: transform;
+        }
+        /* Atmospheric back-glow: cold blue light spilling from behind the ridges */
+        .px-mountain-glow {
+            position: absolute; left: 0; right: 0; bottom: 0;
+            height: 58%; z-index: 3;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse 130% 55% at 50% 84%, rgba(25,85,210,0.26) 0%, transparent 58%),
+                radial-gradient(ellipse  80% 28% at 50% 100%, rgba(55,145,255,0.17) 0%, transparent 48%),
+                radial-gradient(ellipse  45% 22% at 28%  96%, rgba(70,155,255,0.11) 0%, transparent 40%),
+                radial-gradient(ellipse  45% 22% at 72%  94%, rgba(70,155,255,0.11) 0%, transparent 40%);
         }
         .px-overlay {
             position: absolute; inset: 0; z-index: 8;
@@ -237,6 +267,7 @@
                 );
         }
         @media (max-width: 768px) {
+            #intro { min-height: 150vh; }  /* shorter scroll budget on mobile */
             .px-layer { background-size: auto 52vh; }
         }
 
@@ -682,40 +713,47 @@
 
     <!-- ===== HERO ===== -->
     <div class="section" id="intro">
-        <!-- Multi-layer parallax scene (Firewatch-style) -->
-        <div class="px-sky"></div>
-        <div class="px-layer" data-speed="2"  style="background-image:url('parallax/parallax1.png')"></div>
-        <div class="px-layer" data-speed="3"  style="background-image:url('parallax/parallax2.png')"></div>
-        <div class="px-layer" data-speed="4"  style="background-image:url('parallax/parallax3.png')"></div>
-        <div class="px-layer" data-speed="5"  style="background-image:url('parallax/parallax4.png')"></div>
-        <div class="px-layer" data-speed="7"  style="background-image:url('parallax/parallax5.png')"></div>
-        <div class="px-layer" data-speed="9"  style="background-image:url('parallax/parallax6.png')"></div>
-        <div class="px-layer" data-speed="12" style="background-image:url('parallax/parallax7.png')"></div>
-        <div class="px-layer" data-speed="15" style="background-image:url('parallax/parallax8.png')"></div>
-        <div class="px-overlay"></div>
-        <div class="content">
-            <p class="hero-eyebrow reveal">PhD Student · GIS &amp; Urban Informatics · Smart City</p>
-            <h1 class="hero-name reveal reveal-d1">Xiaosheng ZHU</h1>
-            <p class="hero-subtitle reveal reveal-d2">Urban Intelligence · 3D Sensing · <em>Machine Learning</em></p>
-            <div class="hero-pills reveal reveal-d3">
-                <span class="hero-pill">
-                    <img src="polyu_logo.svg" alt="PolyU" loading="lazy">
-                    The Hong Kong Polytechnic University
-                </span>
-                <span class="hero-pill">
-                    <img src="mit_logo.svg" alt="MIT" loading="lazy">
-                    MIT · Joint Supervision
-                </span>
+        <!-- px-stage: sticky 100vh container that "locks" the visual scene to
+             the viewport while #intro's extra height provides scroll budget -->
+        <div class="px-stage">
+            <!-- Multi-layer parallax scene (Firewatch-style) -->
+            <div class="px-sky"></div>
+            <!-- Speeds halved vs original Firewatch so max travel = 50vh (not 100vh).
+                 Near-far differential = 47vh → dramatic depth without edge exposure. -->
+            <div class="px-layer" data-speed="3"  style="background-image:url('parallax/parallax1.png')"></div>
+            <div class="px-layer" data-speed="6"  style="background-image:url('parallax/parallax2.png')"></div>
+            <div class="px-layer" data-speed="10" style="background-image:url('parallax/parallax3.png')"></div>
+            <div class="px-layer" data-speed="16" style="background-image:url('parallax/parallax4.png')"></div>
+            <div class="px-layer" data-speed="22" style="background-image:url('parallax/parallax5.png')"></div>
+            <div class="px-layer" data-speed="30" style="background-image:url('parallax/parallax6.png')"></div>
+            <div class="px-layer" data-speed="40" style="background-image:url('parallax/parallax7.png')"></div>
+            <div class="px-layer" data-speed="50" style="background-image:url('parallax/parallax8.png')"></div>
+            <div class="px-mountain-glow"></div>
+            <div class="px-overlay"></div>
+            <div class="content">
+                <p class="hero-eyebrow reveal">PhD Student · GIS &amp; Urban Informatics · Smart City</p>
+                <h1 class="hero-name reveal reveal-d1">Xiaosheng ZHU</h1>
+                <p class="hero-subtitle reveal reveal-d2">Urban Intelligence · 3D Sensing · <em>Machine Learning</em></p>
+                <div class="hero-pills reveal reveal-d3">
+                    <span class="hero-pill">
+                        <img src="polyu_logo.svg" alt="PolyU" loading="lazy">
+                        The Hong Kong Polytechnic University
+                    </span>
+                    <span class="hero-pill">
+                        <img src="mit_logo.svg" alt="MIT" loading="lazy">
+                        MIT · Joint Supervision
+                    </span>
+                </div>
+                <div class="hero-actions reveal reveal-d4">
+                    <a href="#research" class="btn btn-solid">View Research</a>
+                    <a href="#contact"  class="btn btn-outline">Get in Touch</a>
+                </div>
             </div>
-            <div class="hero-actions reveal reveal-d4">
-                <a href="#research" class="btn btn-solid">View Research</a>
-                <a href="#contact"  class="btn btn-outline">Get in Touch</a>
+            <div class="scroll-cue" aria-hidden="true">
+                <span>Scroll</span>
+                <div class="scroll-cue-line"></div>
             </div>
-        </div>
-        <div class="scroll-cue" aria-hidden="true">
-            <span>Scroll</span>
-            <div class="scroll-cue-line"></div>
-        </div>
+        </div><!-- end px-stage -->
     </div>
 
     <!-- ===== ABOUT ===== -->
@@ -1129,6 +1167,8 @@
         function updateSectionTops() {
             const vh = window.innerHeight;
             allSections.forEach(s => {
+                // #intro is intentionally 200vh for parallax scroll budget — never pull it up
+                if (s.id === 'intro') { s.style.top = '0px'; return; }
                 s.style.top = s.offsetHeight > vh ? `${vh - s.offsetHeight}px` : '0px';
             });
         }
@@ -1159,23 +1199,27 @@
 
         // ── Firewatch-style parallax hero ────────────────────────
         const pxLayers = document.querySelectorAll('#intro .px-layer');
-        if (pxLayers.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const introEl  = document.getElementById('intro');
+        if (pxLayers.length && introEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             let pxTicking = false;
             function driveParallax() {
-                if (pxTicking) return;   // skip if rAF already queued
+                if (pxTicking) return;
                 pxTicking = true;
                 requestAnimationFrame(() => {
-                    // Cap to 1 vh so layers freeze once hero is fully covered
-                    const t = Math.min(window.scrollY, window.innerHeight);
+                    // Parallax travel window = intro height minus one viewport
+                    // e.g. 200vh section → 100vh of scroll before About slides in
+                    const pxEnd = Math.max(0, introEl.offsetHeight - window.innerHeight);
+                    const t     = Math.min(window.scrollY, pxEnd);
                     pxLayers.forEach(layer => {
                         const speed = parseFloat(layer.dataset.speed) || 0;
-                        // translateY is compositor-only: GPU composites without repaint
+                        // speed 100 @ t=pxEnd → translateY(-pxEnd) = exactly -100vh
                         layer.style.transform = `translateY(-${(t * speed / 100).toFixed(2)}px)`;
                     });
                     pxTicking = false;
                 });
             }
             window.addEventListener('scroll', driveParallax, { passive: true });
+            window.addEventListener('resize', driveParallax, { passive: true });
             driveParallax();
         }
     </script>
