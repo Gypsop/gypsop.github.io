@@ -155,7 +155,6 @@
             align-items: center;
             justify-content: center;
             overflow: visible;
-            will-change: top;
             transition: box-shadow 0.3s ease;
         }
         .section.covered {
@@ -199,6 +198,46 @@
             background-image:
                 radial-gradient(circle at 20% 30%, rgba(74,158,255,0.07) 0%, transparent 50%),
                 radial-gradient(circle at 80% 70%, rgba(100,200,255,0.05) 0%, transparent 50%);
+        }
+
+        /* ===== PARALLAX HERO ===== */
+        #intro { overflow: hidden; }
+        .px-sky {
+            position: absolute; inset: 0; z-index: 1;
+            /* Deep navy gradient sky – coolest at top, slightly lighter at horizon */
+            background: linear-gradient(to bottom,
+                #00050e 0%,
+                #000d24 25%,
+                #001133 55%,
+                #001a4a 100%
+            );
+        }
+        .px-layer {
+            /* Anchor to bottom; taller than section so upward translate never gaps */
+            position: absolute; left: 0; right: 0; bottom: 0;
+            height: calc(100% + 220px); z-index: 2;
+            background-repeat: repeat-x;
+            background-position: bottom center;
+            background-size: auto 72vh;
+            /* Shift warm orange/red palette → cool navy blue-slate */
+            filter: hue-rotate(200deg) saturate(0.55) brightness(0.6);
+            /* transform is compositor-only → zero repaint per scroll frame */
+            will-change: transform;
+        }
+        .px-overlay {
+            position: absolute; inset: 0; z-index: 8;
+            /* Atmospheric vignette + horizon glow */
+            background:
+                radial-gradient(ellipse 70% 28% at 50% 100%, rgba(8,38,110,0.50) 0%, transparent 70%),
+                linear-gradient(to bottom,
+                    rgba(0,6,22,0.40) 0%,
+                    rgba(0,4,14,0.06) 42%,
+                    rgba(0,6,20,0.30) 80%,
+                    rgba(0,2,10,0.65) 100%
+                );
+        }
+        @media (max-width: 768px) {
+            .px-layer { background-size: auto 52vh; }
         }
 
         /* --- Content wrapper --- */
@@ -549,10 +588,14 @@
             background: rgba(169,198,255,0.35);
             border-radius: 50%;
             pointer-events: none;
-            animation: floatUp linear infinite;
+            /* transform is compositor-only — no layout/paint per frame */
+            animation: floatUp linear forwards;
             z-index: 1;
         }
-        @keyframes floatUp { to { top: -10px; opacity: 0; } }
+        @keyframes floatUp {
+            from { transform: translateY(0);        opacity: 0.35; }
+            to   { transform: translateY(-110vh);   opacity: 0;    }
+        }
 
         /* ===================== PROGRESS BAR ===================== */
         .progress-bar {
@@ -639,8 +682,17 @@
 
     <!-- ===== HERO ===== -->
     <div class="section" id="intro">
-        <div class="layer layer-navy"></div>
-        <div class="layer layer-mesh"></div>
+        <!-- Multi-layer parallax scene (Firewatch-style) -->
+        <div class="px-sky"></div>
+        <div class="px-layer" data-speed="2"  style="background-image:url('parallax/parallax1.png')"></div>
+        <div class="px-layer" data-speed="3"  style="background-image:url('parallax/parallax2.png')"></div>
+        <div class="px-layer" data-speed="4"  style="background-image:url('parallax/parallax3.png')"></div>
+        <div class="px-layer" data-speed="5"  style="background-image:url('parallax/parallax4.png')"></div>
+        <div class="px-layer" data-speed="7"  style="background-image:url('parallax/parallax5.png')"></div>
+        <div class="px-layer" data-speed="9"  style="background-image:url('parallax/parallax6.png')"></div>
+        <div class="px-layer" data-speed="12" style="background-image:url('parallax/parallax7.png')"></div>
+        <div class="px-layer" data-speed="15" style="background-image:url('parallax/parallax8.png')"></div>
+        <div class="px-overlay"></div>
         <div class="content">
             <p class="hero-eyebrow reveal">PhD Student · GIS &amp; Urban Informatics · Smart City</p>
             <h1 class="hero-name reveal reveal-d1">Xiaosheng ZHU</h1>
@@ -1104,6 +1156,28 @@
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
         backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ── Firewatch-style parallax hero ────────────────────────
+        const pxLayers = document.querySelectorAll('#intro .px-layer');
+        if (pxLayers.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            let pxTicking = false;
+            function driveParallax() {
+                if (pxTicking) return;   // skip if rAF already queued
+                pxTicking = true;
+                requestAnimationFrame(() => {
+                    // Cap to 1 vh so layers freeze once hero is fully covered
+                    const t = Math.min(window.scrollY, window.innerHeight);
+                    pxLayers.forEach(layer => {
+                        const speed = parseFloat(layer.dataset.speed) || 0;
+                        // translateY is compositor-only: GPU composites without repaint
+                        layer.style.transform = `translateY(-${(t * speed / 100).toFixed(2)}px)`;
+                    });
+                    pxTicking = false;
+                });
+            }
+            window.addEventListener('scroll', driveParallax, { passive: true });
+            driveParallax();
+        }
     </script>
 </body>
 </html>
