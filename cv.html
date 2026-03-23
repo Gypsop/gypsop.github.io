@@ -228,31 +228,37 @@
         }
         .px-layer {
             position: absolute; left: 0; right: 0; bottom: 0;
-            /* Extra 60vh = buffer for max translateY (speed=50 × 100vh pxEnd / 100) */
-            height: calc(100% + 60vh); z-index: 2;
+            height: calc(100% + 60vh); z-index: 3;  /* above glow (z=2), below overlay (z=8) */
             background-repeat: repeat-x;
             background-position: bottom center;
             background-size: auto 72vh;
-            /* Palette shift + brighter for glow visibility.
-               drop-shadow follows PNG alpha → blue rim light on mountain ridges. */
-            filter: hue-rotate(200deg) saturate(0.65) brightness(0.78)
-                    drop-shadow(0 -12px 32px rgba(50,130,255,0.55))
-                    drop-shadow(0  -3px 10px rgba(120,200,255,0.35));
-            /* Fade mountain bases → eliminates hard rectangular bottom-edge artifact */
+            /* Drop-shadow traces PNG alpha → white-blue rim light on each ridge.
+               Cost: rasterized ONCE per scroll-start (not per frame), so GPU-safe
+               as long as will-change is managed dynamically (see JS). */
+            filter: hue-rotate(200deg) saturate(0.65) brightness(0.68)
+                    drop-shadow(0 -10px 28px rgba(140,210,255,0.70))
+                    drop-shadow(0  -2px  8px rgba(200,235,255,0.50));
             -webkit-mask-image: linear-gradient(to top, transparent 0%, black 10%);
                     mask-image: linear-gradient(to top, transparent 0%, black 10%);
-            will-change: transform;
         }
-        /* Atmospheric back-glow: cold blue light spilling from behind the ridges */
+        /* Back-glow: sits BEHIND mountains (z=2 < px-layer z=3).
+           Mountains silhouette against it, creating authentic backlit ridge effect.
+           Moves with parallax at mid-range speed so it tracks the mountain mass. */
         .px-mountain-glow {
             position: absolute; left: 0; right: 0; bottom: 0;
-            height: 58%; z-index: 3;
+            height: 84%; z-index: 2;
             pointer-events: none;
             background:
-                radial-gradient(ellipse 130% 55% at 50% 84%, rgba(25,85,210,0.26) 0%, transparent 58%),
-                radial-gradient(ellipse  80% 28% at 50% 100%, rgba(55,145,255,0.17) 0%, transparent 48%),
-                radial-gradient(ellipse  45% 22% at 28%  96%, rgba(70,155,255,0.11) 0%, transparent 40%),
-                radial-gradient(ellipse  45% 22% at 72%  94%, rgba(70,155,255,0.11) 0%, transparent 40%);
+                /* Broad atmospheric horizon light */
+                radial-gradient(ellipse 140% 65% at 50% 90%, rgba(22,78,200,0.62) 0%, transparent 52%),
+                /* Bright central light-source behind central ridge */
+                radial-gradient(ellipse  65% 32% at 50% 100%, rgba(60,150,255,0.55) 0%, transparent 48%),
+                /* Left-side ridge backlight */
+                radial-gradient(ellipse  55% 30% at 20%  98%, rgba(45,128,245,0.32) 0%, transparent 45%),
+                /* Right-side ridge backlight */
+                radial-gradient(ellipse  55% 30% at 80%  96%, rgba(45,128,245,0.32) 0%, transparent 45%),
+                /* Narrow luminous skyline streak just above the ridges */
+                radial-gradient(ellipse 110%  9% at 50%  71%, rgba(90,170,255,0.22) 0%, transparent 55%);
         }
         .px-overlay {
             position: absolute; inset: 0; z-index: 8;
@@ -353,11 +359,13 @@
             gap: 8px;
             padding: 7px 18px;
             border-radius: 40px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.14);
+            /* Slightly more opaque to compensate for removing backdrop-filter.
+               backdrop-filter:blur on hero-pill forces a GPU framebuffer read-back
+               pass every frame while the parallax layers beneath are animating. */
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.16);
             font-size: 0.85rem;
             color: rgba(255,255,255,0.82);
-            backdrop-filter: blur(6px);
             transition: background 0.2s, border-color 0.2s;
         }
         .hero-pill:hover { background: rgba(255,255,255,0.11); border-color: rgba(255,255,255,0.28); }
@@ -718,8 +726,9 @@
         <div class="px-stage">
             <!-- Multi-layer parallax scene (Firewatch-style) -->
             <div class="px-sky"></div>
-            <!-- Speeds halved vs original Firewatch so max travel = 50vh (not 100vh).
-                 Near-far differential = 47vh → dramatic depth without edge exposure. -->
+            <!-- px-mountain-glow BEFORE px-layers so it sits BEHIND them (same z=2, earlier DOM = lower) -->
+            <!-- data-speed: moves with mountain mass so the glow tracks the ridges during scroll -->
+            <div class="px-mountain-glow" data-speed="18"></div>
             <div class="px-layer" data-speed="3"  style="background-image:url('parallax/parallax1.png')"></div>
             <div class="px-layer" data-speed="6"  style="background-image:url('parallax/parallax2.png')"></div>
             <div class="px-layer" data-speed="10" style="background-image:url('parallax/parallax3.png')"></div>
@@ -728,7 +737,6 @@
             <div class="px-layer" data-speed="30" style="background-image:url('parallax/parallax6.png')"></div>
             <div class="px-layer" data-speed="40" style="background-image:url('parallax/parallax7.png')"></div>
             <div class="px-layer" data-speed="50" style="background-image:url('parallax/parallax8.png')"></div>
-            <div class="px-mountain-glow"></div>
             <div class="px-overlay"></div>
             <div class="content">
                 <p class="hero-eyebrow reveal">PhD Student · GIS &amp; Urban Informatics · Smart City</p>
@@ -1114,16 +1122,20 @@
             }
         });
 
-        // ── Floating particles ──────────────────────────────────
+        // ── Floating particles (rate-limited + paused when tab hidden) ────────
+        const MAX_PARTICLES = 4;
         function spawnParticle() {
+            if (document.hidden) return;                       // tab not visible
+            if (document.querySelectorAll('.floating-element').length >= MAX_PARTICLES) return;
             const el = document.createElement('div');
             el.className = 'floating-element';
+            const dur  = (Math.random() * 12 + 10).toFixed(1);
             const size = (Math.random() * 3 + 2).toFixed(1) + 'px';
-            el.style.cssText = `left:${Math.random()*100}vw;width:${size};height:${size};animation-duration:${(Math.random()*12+10).toFixed(1)}s;animation-delay:${(Math.random()*4).toFixed(1)}s`;
+            el.style.cssText = `left:${Math.random()*100}vw;width:${size};height:${size};animation-duration:${dur}s`;
             document.body.appendChild(el);
-            setTimeout(() => el.remove(), 24000);
+            setTimeout(() => el.remove(), parseFloat(dur) * 1000 + 200);
         }
-        setInterval(spawnParticle, 4000);
+        setInterval(spawnParticle, 6000);  // halved spawn rate
 
         // ── Reveal on scroll ────────────────────────────────────
         const revealObserver = new IntersectionObserver(entries => {
@@ -1198,29 +1210,49 @@
         backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
         // ── Firewatch-style parallax hero ────────────────────────
-        const pxLayers = document.querySelectorAll('#intro .px-layer');
+        const pxLayers = document.querySelectorAll('#intro [data-speed]');  // includes px-mountain-glow
         const introEl  = document.getElementById('intro');
         if (pxLayers.length && introEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            let pxTicking = false;
+            let pxTicking   = false;
+            let pxIdleTimer = null;
+            let pxWillActive = false;
+
+            // Toggle will-change only during active scroll; idle → 'auto'
+            // so the compositor drops the 8 GPU layers when nothing is moving.
+            function setPxWillChange(on) {
+                if (pxWillActive === on) return;
+                pxWillActive = on;
+                pxLayers.forEach(l => { l.style.willChange = on ? 'transform' : 'auto'; });
+            }
+
             function driveParallax() {
+                // Activate GPU promotion just-in-time
+                setPxWillChange(true);
+                // Schedule deactivation 400 ms after scroll stops
+                clearTimeout(pxIdleTimer);
+                pxIdleTimer = setTimeout(() => setPxWillChange(false), 400);
+
                 if (pxTicking) return;
                 pxTicking = true;
                 requestAnimationFrame(() => {
-                    // Parallax travel window = intro height minus one viewport
-                    // e.g. 200vh section → 100vh of scroll before About slides in
                     const pxEnd = Math.max(0, introEl.offsetHeight - window.innerHeight);
                     const t     = Math.min(window.scrollY, pxEnd);
                     pxLayers.forEach(layer => {
                         const speed = parseFloat(layer.dataset.speed) || 0;
-                        // speed 100 @ t=pxEnd → translateY(-pxEnd) = exactly -100vh
                         layer.style.transform = `translateY(-${(t * speed / 100).toFixed(2)}px)`;
                     });
                     pxTicking = false;
                 });
             }
+
             window.addEventListener('scroll', driveParallax, { passive: true });
             window.addEventListener('resize', driveParallax, { passive: true });
             driveParallax();
+
+            // Release all GPU layers immediately when #intro is no longer visible
+            new IntersectionObserver(([e]) => {
+                if (!e.isIntersecting) { clearTimeout(pxIdleTimer); setPxWillChange(false); }
+            }, { threshold: 0 }).observe(introEl);
         }
     </script>
 </body>
