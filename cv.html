@@ -495,6 +495,33 @@
         .badge-j { background: rgba(74,158,255,0.13); color: #5aadff; border: 1px solid rgba(74,158,255,0.22); }
         .badge-c { background: rgba(100,200,100,0.11); color: #7dcc7d; border: 1px solid rgba(100,200,100,0.2); }
         .badge-w { background: rgba(255,196,50,0.11); color: #ffc832; border: 1px solid rgba(255,196,50,0.2); }
+        .badge-m { background: rgba(200,100,255,0.11); color: #c87aff; border: 1px solid rgba(200,100,255,0.22); }
+
+        /* ===================== RESEARCH PILLARS ===================== */
+        .pillar { margin-bottom: 3.5rem; }
+        .pillar:last-child { margin-bottom: 0; }
+        .pillar-hd {
+            display: flex; align-items: flex-start; gap: 1.2rem;
+            margin-bottom: 1.6rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(169,198,255,0.12);
+        }
+        .pillar-num {
+            font-family: 'Lobster Two', cursive;
+            font-size: 2.8rem; line-height: 1;
+            color: rgba(169,198,255,0.14);
+            flex-shrink: 0; min-width: 2.4rem;
+        }
+        .pillar-meta h3 {
+            font-size: 0.83rem; font-weight: 600; letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: rgba(169,198,255,0.85);
+            margin-bottom: 0.3rem;
+        }
+        .pillar-meta p {
+            font-size: 0.78rem; color: rgba(255,255,255,0.40); line-height: 1.55;
+        }
+        .pub-body p strong { color: rgba(255,255,255,0.82); }
 
         /* ===================== SKILLS ===================== */
         .skills-grid {
@@ -763,24 +790,24 @@
             <div class="section-rule reveal reveal-d1"></div>
             <div class="about-grid">
                 <div class="about-bio reveal reveal-d2">
-                    <p>I am a <strong>PhD candidate</strong> at The Hong Kong Polytechnic University, jointly supervised at the <strong>Massachusetts Institute of Technology</strong>. My work sits at the intersection of urban computing, remote sensing, and machine learning.</p>
-                    <p>I develop intelligent methods for understanding and digitising the complex 3D fabric of cities — from automated point cloud scene analysis to data-driven modelling of the built environment.</p>
+                    <p>I am an interdisciplinary researcher working at the intersection of <strong>Urban Informatics</strong>, <strong>Mobile Computing &amp; Smart Sensing</strong>, <strong>Spatial Data Science</strong>, and <strong>Applied AI</strong>. My core vision is to harness multi-source physical sensors — acoustic arrays, LiDAR, video, and smartphone imagery — alongside advanced spatial statistics and deep learning to achieve high-precision spatio-temporal understanding of high-density cities.</p>
+                    <p>My research addresses human-centred challenges: calibration-free indoor positioning, real-time 3-D mapping, urban accessibility auditing, traffic emission estimation, and spatial equity for disadvantaged groups. I collaborate closely with the <strong>MIT Senseable City Lab</strong>, the Hong Kong Polytechnic University, and Politecnico di Milano.</p>
                     <div class="tag-row">
-                        <span class="tag">3D Point Cloud</span>
-                        <span class="tag">Urban Sensing</span>
-                        <span class="tag">Deep Learning</span>
-                        <span class="tag">Smart City</span>
-                        <span class="tag">Remote Sensing</span>
-                        <span class="tag">Geospatial AI</span>
+                        <span class="tag">Urban Informatics</span>
+                        <span class="tag">Mobile Sensing</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">LiDAR SLAM</span>
+                        <span class="tag">Spatial Data Science</span>
+                        <span class="tag">Applied AI</span>
                     </div>
                     <div class="about-meta">
                         <div class="meta-row">
                             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/academia.svg" alt="">
-                            <span><strong>PhD · GIS &amp; Urban Informatics</strong> — PolyU / MIT Joint Programme</span>
+                            <span><strong>PhD · GIS &amp; Urban Informatics</strong> — PolyU / MIT Senseable City Lab Joint Programme</span>
                         </div>
                         <div class="meta-row">
                             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/googlescholar.svg" alt="">
-                            <span><strong>Google Scholar</strong> — Publications in IEEE, ISPRS top-tier venues</span>
+                            <span><strong>9 Peer-Reviewed Publications</strong> — IEEE TMC, Phil. Trans. R. Soc. A, Cities, BMC &amp; more</span>
                         </div>
                         <div class="meta-row">
                             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/microsoftazure.svg" alt="">
@@ -799,16 +826,16 @@
                     <div class="info-card">
                         <div class="info-card-top">
                             <img src="mit_logo.svg" alt="MIT" loading="lazy" style="padding:2px;">
-                            <h4>Visiting Researcher — MIT</h4>
+                            <h4>Visiting Researcher — MIT Senseable City Lab</h4>
                         </div>
-                        <p>Massachusetts Institute of Technology · Aug. 2023 – Present<br>Smart City &amp; 3D Environment Sensing Technologies</p>
+                        <p>Massachusetts Institute of Technology · Aug. 2023 – Present<br>Smart City &amp; Ubiquitous Computing Research</p>
                     </div>
                     <div class="info-card">
                         <div class="info-card-top">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/google.svg" alt="GDSC" loading="lazy">
-                            <h4>Certified Web Developer</h4>
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/googlescholar.svg" alt="Scholar" loading="lazy">
+                            <h4>9 Peer-Reviewed Publications</h4>
                         </div>
-                        <p>Google Developer Student Club (GDSC) · PolyU Chapter</p>
+                        <p>IEEE TMC · Phil. Trans. R. Soc. A · Cities · BMC Infectious Diseases · Geospatial Health · IEEE Sensors Journal</p>
                     </div>
                 </div>
             </div>
@@ -820,54 +847,150 @@
         <div class="layer layer-slate"></div>
         <div class="layer layer-mesh"></div>
         <div class="content">
-            <p class="section-label reveal">Selected Works</p>
+            <p class="section-label reveal">Research Overview</p>
             <h2 class="section-title reveal reveal-d1">Research &amp; Publications</h2>
             <div class="section-rule reveal reveal-d1"></div>
-            <div class="pub-list">
-                <div class="pub-item reveal reveal-d1">
-                    <div class="pub-year">2024</div>
-                    <div class="pub-body">
-                        <h4>Automated 3D Urban Scene Segmentation from Mobile LiDAR Using Multi-Scale Feature Aggregation</h4>
-                        <p>Xiaosheng ZHU et al. · <em>IEEE Transactions on Geoscience and Remote Sensing</em></p>
-                        <div class="pub-badges">
-                            <span class="badge badge-j">Journal</span>
-                            <span class="badge badge-j">IEEE TGRS</span>
-                        </div>
+
+            <!-- PILLAR 1 -->
+            <div class="pillar reveal reveal-d1">
+                <div class="pillar-hd">
+                    <div class="pillar-num">01</div>
+                    <div class="pillar-meta">
+                        <h3>Mobile Sensing, SLAM &amp; Ubiquitous Computing</h3>
+                        <p>Sensor-level intelligence for calibration-free pedestrian tracking via active acoustic sensing, and lightweight loop closure detection in large-scale LiDAR SLAM.</p>
                     </div>
                 </div>
-                <div class="pub-item reveal reveal-d2">
-                    <div class="pub-year">2023</div>
-                    <div class="pub-body">
-                        <h4>LiDAR-Based Building Façade Reconstruction for Urban Digital Twin Applications</h4>
-                        <p>Xiaosheng ZHU et al. · <em>ISPRS Journal of Photogrammetry and Remote Sensing</em></p>
-                        <div class="pub-badges">
-                            <span class="badge badge-j">Journal</span>
-                            <span class="badge badge-j">ISPRS JPRS</span>
+                <div class="pub-list">
+                    <div class="pub-item reveal reveal-d2">
+                        <div class="pub-year">2026</div>
+                        <div class="pub-body">
+                            <h4>UAO: Unlocking Pedestrian Tracking with Acoustic Devices</h4>
+                            <p>Xinchuang Lin, <strong>Xiaosheng Zhu</strong>, Yaohui Huang, Long Qian, Yue Yu, Liang Chen, Ruizhi Chen · <em>IEEE Transactions on Mobile Computing</em></p>
+                            <div class="pub-badges">
+                                <span class="badge badge-j">Journal</span>
+                                <span class="badge badge-j">IEEE TMC</span>
+                                <span class="badge badge-j">DOI: 10.1109/TMC.2026.3682903</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="pub-item reveal reveal-d2">
-                    <div class="pub-year">2023</div>
-                    <div class="pub-body">
-                        <h4>Scene Understanding from Mobile Laser Scanning: A Multi-Task Learning Approach for Urban Point Clouds</h4>
-                        <p>Xiaosheng ZHU et al. · <em>ISPRS Annals of Photogrammetry, Remote Sensing and Spatial Information Sciences</em></p>
-                        <div class="pub-badges">
-                            <span class="badge badge-c">Conference</span>
-                            <span class="badge badge-c">ISPRS 2023</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="pub-item reveal reveal-d3">
-                    <div class="pub-year">WIP</div>
-                    <div class="pub-body">
-                        <h4>Real-Time 3D Environment Sensing for Smart City Applications: Heterogeneous Sensor Fusion Framework</h4>
-                        <p>Xiaosheng ZHU et al. · <em>In Preparation</em></p>
-                        <div class="pub-badges">
-                            <span class="badge badge-w">In Progress</span>
+                    <div class="pub-item reveal reveal-d2">
+                        <div class="pub-year">2022</div>
+                        <div class="pub-body">
+                            <h4>DeLightLCD: A Deep and Lightweight Network for Loop Closure Detection in LiDAR SLAM</h4>
+                            <p>Haodong Xiang, <strong>Xiaosheng Zhu</strong>, Wenzhong Shi, Wenzheng Fan, Pengxin Chen, Sheng Bao · <em>IEEE Sensors Journal</em>, Vol. 22, No. 21, pp. 20761–20772</p>
+                            <div class="pub-badges">
+                                <span class="badge badge-j">Journal</span>
+                                <span class="badge badge-j">IEEE Sensors</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- PILLAR 2 -->
+            <div class="pillar reveal reveal-d2">
+                <div class="pillar-hd">
+                    <div class="pillar-num">02</div>
+                    <div class="pillar-meta">
+                        <h3>Urban Computer Vision &amp; Sustainable Development</h3>
+                        <p>YOLO-Pose, multi-object tracking, and smartphone imagery deployed in urban micro-scenes to audit sidewalk accessibility, monitor older-adult play behaviours, and estimate vehicular emissions.</p>
+                    </div>
+                </div>
+                <div class="pub-list">
+                    <div class="pub-item reveal reveal-d2">
+                        <div class="pub-year">2024</div>
+                        <div class="pub-body">
+                            <h4>Mapping Sidewalk Accessibility with Smartphone Imagery and Visual AI: A Participatory Approach</h4>
+                            <p>Diego Morra, <strong>Xiaosheng Zhu</strong>, Chang Liu, Kyle Fu, Fábio Duarte, Simone Mora, Zhengbing He, Carlo Ratti · <em>Philosophical Transactions of the Royal Society A</em>, 382: 20240106</p>
+                            <div class="pub-badges">
+                                <span class="badge badge-j">Journal</span>
+                                <span class="badge badge-j">Phil. Trans. R. Soc. A</span>
+                                <span class="badge badge-m">MIT Senseable City Lab</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pub-item reveal reveal-d2">
+                        <div class="pub-year">2025</div>
+                        <div class="pub-body">
+                            <h4>Estimating Vehicular Emissions by Applying Deep Learning on Video Camera Scenes</h4>
+                            <p>Ashutosh Kumar, Tom Benson, An Wang, Songhua Hu, Yoshihide Sekimoto, Paolo Santi, Fábio Duarte, <strong>Xiaosheng Zhu</strong>, Titus Venverloo, Carlo Ratti · <em>Research Square Preprint</em>, Posted Aug. 12, 2025</p>
+                            <div class="pub-badges">
+                                <span class="badge badge-w">Preprint</span>
+                                <span class="badge badge-m">MIT Senseable City Lab</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pub-item reveal reveal-d3">
+                        <div class="pub-year">2025</div>
+                        <div class="pub-body">
+                            <h4>What and How Do They Play? Understanding Older Adults' Play Behaviors in Urban Parks of High-Density Cities Through AI-Powered Analysis</h4>
+                            <p>Izzy JIAN, <strong>Xiaosheng ZHU</strong> · <em>Working Paper</em></p>
+                            <div class="pub-badges">
+                                <span class="badge badge-w">Working Paper</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PILLAR 3 -->
+            <div class="pillar reveal reveal-d3">
+                <div class="pillar-hd">
+                    <div class="pillar-num">03</div>
+                    <div class="pillar-meta">
+                        <h3>Spatial Data Science &amp; Urban Resilience</h3>
+                        <p>Spatial point-pattern analysis (Two-variable Ripley's K), Spatial Vertical Equity modelling, differential-evolution association rule mining, and geomedia theory applied to public-health transmission, open-space fragmentation, and citizen spatial behaviour in high-density cities.</p>
+                    </div>
+                </div>
+                <div class="pub-list">
+                    <div class="pub-item reveal reveal-d2">
+                        <div class="pub-year">2026</div>
+                        <div class="pub-body">
+                            <h4>Spatiotemporal Dynamics of Open Space Fragmentation and Associated Spatial Vertical Equity in High-Density Cities</h4>
+                            <p>Peiheng Yu, <strong>Xiaosheng Zhu*</strong>, Wei Luo, Esther H.K. Yung, Edwin H.W. Chan, Yiyun Chen, Xiangzheng Deng* · <em>Cities</em>, Vol. 175, 107159</p>
+                            <div class="pub-badges">
+                                <span class="badge badge-j">Journal</span>
+                                <span class="badge badge-j">Cities</span>
+                                <span class="badge badge-j">Co-Corresponding Author</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pub-item reveal reveal-d2">
+                        <div class="pub-year">2022</div>
+                        <div class="pub-body">
+                            <h4>The Effectiveness of the Restricted Policy on Specific Venues in Hong Kong: A Spatial Point Pattern View</h4>
+                            <p>Yijia Liu, Wenzhong Shi, Anshu Zhang, <strong>Xiaosheng Zhu</strong> · <em>Geospatial Health</em>, Volume 17: 1130</p>
+                            <div class="pub-badges">
+                                <span class="badge badge-j">Journal</span>
+                                <span class="badge badge-j">Geospatial Health</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pub-item reveal reveal-d2">
+                        <div class="pub-year">2022</div>
+                        <div class="pub-body">
+                            <h4>The Fine-Scale Associations between Socioeconomic Status, Density, Functionality, and Spread of COVID-19 within a High-Density City</h4>
+                            <p>Anshu Zhang, Wenzhong Shi, Chengzhuo Tong, <strong>Xiaosheng Zhu</strong>, Yijia Liu, et al. · <em>BMC Infectious Diseases</em>, 22: 274</p>
+                            <div class="pub-badges">
+                                <span class="badge badge-j">Journal</span>
+                                <span class="badge badge-j">BMC Infect. Dis.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pub-item reveal reveal-d3">
+                        <div class="pub-year">2024</div>
+                        <div class="pub-body">
+                            <h4>日常生活的复魅——地理媒介视角下城市漫步 #CityWalk 的影响因素初探</h4>
+                            <p><strong>朱晓胜</strong> 等 · <em>2024 中国城市规划年会论文集</em></p>
+                            <div class="pub-badges">
+                                <span class="badge badge-c">Conference</span>
+                                <span class="badge badge-c">中国城市规划年会</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -882,82 +1005,71 @@
             <div class="skills-grid">
                 <div class="skill-block reveal reveal-d1">
                     <div class="skill-block-hd">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/python.svg" alt="" loading="lazy">
-                        <h3>Programming</h3>
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/pytorch.svg" alt="" loading="lazy">
+                        <h3>AI &amp; Computer Vision</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="stag stag-hl">Python</span>
-                        <span class="stag stag-hl">C / C++</span>
-                        <span class="stag">Java</span>
-                        <span class="stag">HTML / CSS / JS</span>
-                        <span class="stag">SQL</span>
-                        <span class="stag">MATLAB</span>
+                        <span class="stag stag-hl">YOLO-Pose</span>
+                        <span class="stag stag-hl">Deep Association Trackers</span>
+                        <span class="stag">Siamese Networks</span>
+                        <span class="stag">Few-Shot Learning</span>
+                        <span class="stag">Dual-Attention Mechanisms</span>
+                        <span class="stag">Object Detection</span>
                     </div>
                 </div>
                 <div class="skill-block reveal reveal-d2">
                     <div class="skill-block-hd">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/tensorflow.svg" alt="" loading="lazy">
-                        <h3>Machine Learning</h3>
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/raspberrypi.svg" alt="" loading="lazy">
+                        <h3>Spatial Computing &amp; Mobile Sensing</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="stag stag-hl">Deep Learning</span>
-                        <span class="stag stag-hl">Point Cloud DL</span>
-                        <span class="stag">PyTorch</span>
-                        <span class="stag">TensorFlow</span>
-                        <span class="stag">Semantic Segmentation</span>
-                        <span class="stag">Model Optimization</span>
+                        <span class="stag stag-hl">Active Acoustic Sensing</span>
+                        <span class="stag stag-hl">LiDAR SLAM</span>
+                        <span class="stag">Pedestrian Dead Reckoning</span>
+                        <span class="stag">Loop Closure Detection</span>
+                        <span class="stag">Signal Processing</span>
+                        <span class="stag">ROS</span>
                     </div>
                 </div>
                 <div class="skill-block reveal reveal-d3">
                     <div class="skill-block-hd">
                         <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/esri.svg" alt="" loading="lazy">
-                        <h3>GIS &amp; Remote Sensing</h3>
+                        <h3>Spatial Data Science</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="stag stag-hl">ArcGIS / QGIS</span>
-                        <span class="stag stag-hl">LiDAR Processing</span>
-                        <span class="stag">ENVI</span>
-                        <span class="stag">Spatial Analysis</span>
-                        <span class="stag">Geo-database Design</span>
-                        <span class="stag">Mapbox SDK</span>
+                        <span class="stag stag-hl">Spatial Point Pattern Analysis</span>
+                        <span class="stag stag-hl">Two-variable Ripley's K</span>
+                        <span class="stag">Landscape Fragmentation Metrics</span>
+                        <span class="stag">Spatial Vertical Equity Modelling</span>
+                        <span class="stag">GeoPandas</span>
+                        <span class="stag">ArcGIS Pro / QGIS</span>
                     </div>
                 </div>
                 <div class="skill-block reveal reveal-d1">
                     <div class="skill-block-hd">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/android.svg" alt="" loading="lazy">
-                        <h3>Mobile &amp; Platforms</h3>
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/jupyter.svg" alt="" loading="lazy">
+                        <h3>Urban Big Data Mining</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="stag stag-hl">Android (Java)</span>
-                        <span class="stag">ArcGIS Mobile</span>
-                        <span class="stag">Qt / C++</span>
-                        <span class="stag">Linux</span>
-                        <span class="stag">Git</span>
-                        <span class="stag">Docker</span>
+                        <span class="stag stag-hl">Differential-evolution Assoc. Rule Mining</span>
+                        <span class="stag stag-hl">Sentiment Analysis (NLP)</span>
+                        <span class="stag">Social Media Text Mining</span>
+                        <span class="stag">Complex Network Analysis</span>
+                        <span class="stag">Scikit-learn</span>
                     </div>
                 </div>
                 <div class="skill-block reveal reveal-d2">
                     <div class="skill-block-hd">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/autodesk.svg" alt="" loading="lazy">
-                        <h3>Design &amp; CAD</h3>
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/python.svg" alt="" loading="lazy">
+                        <h3>Core Toolkit</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="stag stag-hl">AutoCAD (Pro Lvl II)</span>
-                        <span class="stag">3D Modelling</span>
-                        <span class="stag">Figma</span>
-                        <span class="stag">Adobe Illustrator</span>
-                    </div>
-                </div>
-                <div class="skill-block reveal reveal-d3">
-                    <div class="skill-block-hd">
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/microsoftazure.svg" alt="" loading="lazy">
-                        <h3>Certifications</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="stag stag-hl">MS Azure AI Services</span>
-                        <span class="stag stag-hl">TOEFL 109</span>
-                        <span class="stag">AutoCAD Professional</span>
-                        <span class="stag">GDSC Web Dev</span>
+                        <span class="stag stag-hl">Python (PyTorch · GeoPandas · NumPy)</span>
+                        <span class="stag stag-hl">PowerShell / Shell Automation</span>
+                        <span class="stag">Docker</span>
+                        <span class="stag">C / C++</span>
+                        <span class="stag">MATLAB</span>
+                        <span class="stag">Git</span>
                     </div>
                 </div>
             </div>
